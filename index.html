@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Md. Uzzal Chowdhury | Research Professional Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #3b82f6;
+        --secondary: #8b5cf6;
+        --accent: #ec4899;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+        background-color: #0f172a;
+        color: #e2e8f0;
+        overflow-x: hidden;
+      }
+
+      .futuristic-font {
+        font-family: "Orbitron", sans-serif;
+        letter-spacing: 1px;
+      }
+
+      .gradient-text {
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--secondary),
+          var(--accent)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .gradient-bg {
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--secondary),
+          var(--accent)
+        );
+      }
+
+      .glass-card {
+        background: rgba(30, 41, 59, 0.5);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .glass-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(59, 130, 246, 0.3);
+        border-color: rgba(59, 130, 246, 0.4);
+      }
+
+      .hexagon {
+        clip-path: polygon(
+          50% 0%,
+          100% 25%,
+          100% 75%,
+          50% 100%,
+          0% 75%,
+          0% 25%
+        );
+      }
+
+      /* Animations */
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(59, 130, 246, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+        }
+      }
+
+      .floating {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .fade-in {
+        animation: fadeIn 1s forwards;
+        opacity: 0;
+      }
+
+      .pulse {
+        animation: pulse 2s infinite;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 20px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(
+          to bottom,
+          var(--primary),
+          var(--secondary),
+          var(--accent)
+        );
+      }
+
+      .timeline-dot {
+        position: absolute;
+        left: 12px;
+        top: 5px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        border: 3px solid #1e293b;
+        box-shadow: 0 0 10px rgba(59, 130, 246, 0.7);
+      }
+
+      .skill-icon {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 16px;
+        margin-bottom: 12px;
+        transition: all 0.3s ease;
+      }
+
+      .skill-icon:hover {
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      .hover-grow {
+        transition: all 0.3s ease;
+      }
+
+      .hover-grow:hover {
+        transform: scale(1.02);
+      }
+
+      .parallax-bg {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .tech-bg {
+        background-image: url("https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80");
+      }
+
+      .data-bg {
+        background-image: url("https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80");
+      }
+
+      .research-bg {
+        background-image: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80");
+      }
+
+      .glow {
+        text-shadow: 0 0 10px rgba(59, 130, 246, 0.7);
+      }
+
+      /* Full height modern menu */
+      .fullpage-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(15, 23, 42, 0.98);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transform: translateY(-20px);
+      }
+
+      .fullpage-menu.active {
+        opacity: 1;
+        pointer-events: all;
+        transform: translateY(0);
+      }
+
+      .menu-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .menu-links a {
+        color: white;
+        font-size: 2.5rem;
+        font-weight: 500;
+        text-decoration: none;
+        position: relative;
+        transition: all 0.3s ease;
+        font-family: "Orbitron", sans-serif;
+      }
+
+      .menu-links a:hover {
+        color: var(--primary);
+      }
+
+      .menu-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        transition: width 0.4s ease;
+      }
+
+      .menu-links a:hover::after {
+        width: 100%;
+      }
+
+      .close-menu {
+        position: absolute;
+        top: 2.5rem;
+        right: 2.5rem;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 1001;
+      }
+
+      .close-menu:hover {
+        color: var(--accent);
+        transform: rotate(90deg);
+      }
+
+      .menu-btn {
+        transition: all 0.3s ease;
+      }
+
+      .menu-btn.active {
+        transform: rotate(90deg);
+      }
+
+      /* Grid item animation */
+      .grid-item {
+        transform: scale(0.95);
+        transition: all 0.3s ease;
+      }
+
+      .grid-item:hover {
+        transform: scale(1);
+        box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .menu-links a {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full bg-slate-900/80 backdrop-blur-md z-50 border-b border-slate-700/30 transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+          <div class="flex items-center">
+            <span
+              class="text-xl font-bold gradient-text futuristic-font tracking-wider"
+              >UZZAL CHOWDHURY</span
+            >
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#about"
+              class="text-slate-300 hover:text-blue-400 transition-all hover:glow group"
+            >
+              <span class="group-hover:text-glow">About</span>
+              <div
+                class="h-0.5 bg-gradient-to-r from-blue-400 to-transparent w-0 group-hover:w-full transition-all duration-300"
+              ></div>
+            </a>
+            <a
+              href="#experience"
+              class="text-slate-300 hover:text-purple-400 transition-all hover:glow group"
+            >
+              <span class="group-hover:text-glow">Experience</span>
+              <div
+                class="h-0.5 bg-gradient-to-r from-purple-400 to-transparent w-0 group-hover:w-full transition-all duration-300"
+              ></div>
+            </a>
+            <a
+              href="#education"
+              class="text-slate-300 hover:text-blue-400 transition-all hover:glow group"
+            >
+              <span class="group-hover:text-glow">Education</span>
+              <div
+                class="h-0.5 bg-gradient-to-r from-blue-400 to-transparent w-0 group-hover:w-full transition-all duration-300"
+              ></div>
+            </a>
+            <a
+              href="#research"
+              class="text-slate-300 hover:text-pink-400 transition-all hover:glow group"
+            >
+              <span class="group-hover:text-glow">Research</span>
+              <div
+                class="h-0.5 bg-gradient-to-r from-pink-400 to-transparent w-0 group-hover:w-full transition-all duration-300"
+              ></div>
+            </a>
+            <a
+              href="#publications"
+              class="text-slate-300 hover:text-purple-400 transition-all hover:glow group"
+            >
+              <span class="group-hover:text-glow">Publications</span>
+              <div
+                class="h-0.5 bg-gradient-to-r from-purple-400 to-transparent w-0 group-hover:w-full transition-all duration-300"
+              ></div>
+            </a>
+            <a
+              href="#skills"
+              class="text-slate-300 hover:text-purple-400 transition-all hover:glow group"
+            >
+              <span class="group-hover:text-glow">Skills</span>
+              <div
+                class="h-0.5 bg-gradient-to-r from-purple-400 to-transparent w-0 group-hover:w-full transition-all duration-300"
+              ></div>
+            </a>
+            <a
+              href="#contact"
+              class="text-slate-300 hover:text-pink-400 transition-all hover:glow group"
+            >
+              <span class="group-hover:text-glow">Contact</span>
+              <div
+                class="h-0.5 bg-gradient-to-r from-pink-400 to-transparent w-0 group-hover:w-full transition-all duration-300"
+              ></div>
+            </a>
+          </div>
+          <div class="md:hidden flex items-center">
+            <button
+              id="menu-btn"
+              class="text-slate-300 focus:outline-none menu-btn"
+            >
+              <svg
+                class="h-8 w-8"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Full Page Menu -->
+    <div class="fullpage-menu" id="fullpage-menu">
+      <div class="close-menu" id="close-menu">
+        <i class="fas fa-times"></i>
+      </div>
+      <div class="menu-links">
+        <a href="#about" class="futuristic-font hover:text-blue-400">About</a>
+        <a href="#experience" class="futuristic-font hover:text-purple-400"
+          >Experience</a
+        >
+        <a href="#education" class="futuristic-font hover:text-blue-400"
+          >Education</a
+        >
+        <a href="#research" class="futuristic-font hover:text-pink-400"
+          >Research</a
+        >
+        <a href="#publications" class="futuristic-font hover:text-purple-400"
+          >Publications</a
+        >
+        <a href="#skills" class="futuristic-font hover:text-purple-400"
+          >Skills</a
+        >
+        <a href="#contact" class="futuristic-font hover:text-pink-400"
+          >Contact</a
+        >
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-24 tech-bg parallax-bg relative overflow-hidden">
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900/30"
+      ></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="md:flex items-center justify-between">
+          <div
+            class="md:w-1/2 mb-12 md:mb-0 fade-in"
+            style="animation-delay: 0.2s"
+          >
+            <h1
+              class="text-4xl md:text-6xl font-bold mb-4 text-white futuristic-font glow tracking-tight"
+            >
+              MD. UZZAL CHOWDHURY
+            </h1>
+            <h2
+              class="text-2xl md:text-3xl font-semibold mb-6 gradient-text futuristic-font tracking-wider"
+            >
+              Research & Data Science Specialist
+            </h2>
+            <p class="text-lg mb-8 text-slate-200 leading-relaxed">
+              With nearly a decade of experience in research and evaluation
+              across emergency and development settings, specializing in
+              Monitoring, Evaluation, Accountability, and Learning (MEAL) with a
+              strong foundation in statistics and data analysis.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a
+                href="#contact"
+                class="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition futuristic-font hover:shadow-lg hover:-translate-y-1 transform transition-all duration-300"
+              >
+                CONTACT ME
+              </a>
+              <a
+                href="#research"
+                class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-blue-600 transition futuristic-font hover:shadow-lg hover:-translate-y-1 transform transition-all duration-300"
+              >
+                VIEW RESEARCH
+              </a>
+            </div>
+          </div>
+          <div
+            class="md:w-1/2 flex justify-center fade-in"
+            style="animation-delay: 0.4s"
+          >
+            <div
+              class="relative floating hover:scale-105 transform transition-all duration-500"
+            >
+              <div
+                class="hexagon w-64 h-72 md:w-80 md:h-88 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center border-2 border-white/20 hover:border-blue-400/50 transition-all duration-500"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                  alt="Professional portrait"
+                  class="hexagon w-[calc(100%-8px)] h-[calc(100%-8px)] object-cover"
+                />
+              </div>
+              <div
+                class="absolute -right-4 -bottom-4 glass-card p-4 rounded-lg shadow-lg pulse border border-blue-400/30"
+              >
+                <div class="flex items-center space-x-2">
+                  <i class="fas fa-envelope text-blue-400"></i>
+                  <span class="text-sm font-medium text-white"
+                    >uzzal77sbi@gmail.com</span
+                  >
+                </div>
+              </div>
+              <div
+                class="absolute -left-4 -top-4 w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center border border-blue-400/30"
+              >
+                <i class="fas fa-star text-blue-400 animate-spin-slow"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="absolute bottom-20 -right-20 w-64 h-64 bg-blue-500/20 rounded-full filter blur-3xl animate-pulse-slow"
+      ></div>
+      <div
+        class="absolute -top-20 -left-20 w-64 h-64 bg-purple-500/20 rounded-full filter blur-3xl animate-pulse-slow"
+        style="animation-delay: 1s"
+      ></div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative overflow-hidden">
+      <div
+        class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center opacity-5"
+      ></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <h2
+          class="text-4xl font-bold text-center mb-16 gradient-text futuristic-font tracking-wider"
+        >
+          PROFESSIONAL SUMMARY
+        </h2>
+
+        <div
+          class="glass-card rounded-xl p-8 mb-12 fade-in hover-glow hover:border-glow"
+        >
+          <div class="md:flex items-center gap-8">
+            <div class="md:w-1/3 mb-6 md:mb-0">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="Data analysis"
+                class="w-full h-auto rounded-lg shadow-lg transform hover:scale-105 transition duration-500"
+              />
+            </div>
+            <div class="md:w-2/3">
+              <p class="mb-6 text-slate-200 leading-relaxed">
+                Holding a Master's in Statistics from the University of Dhaka, I
+                have developed expertise in research design, survey tools,
+                qualitative guideline development, data collection, analysis,
+                and reporting. With hands-on experience in over 25 mixed-method
+                research studies, I bring a strong track record in generating
+                high-quality evidence to inform program design, drive
+                implementation excellence, and shape policy decisions.
+              </p>
+              <p class="mb-6 text-slate-200 leading-relaxed">
+                Beyond research, I actively contribute to organizational
+                priorities including CSP, DEI, GESI, humanitarian response, and
+                staff well-being through cultural and sports
+                engagement—demonstrating both analytical depth and a
+                people-centered approach at SCI. His previous appointment before
+                joining at SCI was as a Senior Statistician at BRAC James P
+                Grant School of Public Health. I also worked as a Senior
+                Teaching Fellow for the Biostatistics course of the MPH program.
+                Previously, he also worked in the a2i program of the Prime
+                Minister's office in Bangladesh. He has bachelors and master's
+                degrees in Statistics, Biostatistics, and Informatics from the
+                University of Dhaka, Bangladesh.
+              </p>
+              <p class="text-slate-200 leading-relaxed">
+                His work interests include climate change, urban and rural
+                areas, marginalized communities such as brothel and Dalit
+                groups, sexual and reproductive health and rights, children's
+                and adolescents' health, index generation, and the application
+                of behavioral science for service simplification.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="glass-card p-6 rounded-xl fade-in hover-glow"
+            style="animation-delay: 0.2s"
+          >
+            <div class="text-blue-400 mb-4">
+              <div
+                class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mb-4"
+              >
+                <i class="fas fa-bullseye text-2xl"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-white">
+              Research Focus
+            </h3>
+            <p class="text-slate-300">
+              Specializing in mixed-method research with expertise in MEAL
+              (Monitoring, Evaluation, Accountability, and Learning) frameworks
+              and statistical analysis.
+            </p>
+            <div
+              class="mt-4 h-1 w-20 bg-gradient-to-r from-blue-500 to-transparent rounded-full"
+            ></div>
+          </div>
+
+          <div
+            class="glass-card p-6 rounded-xl fade-in hover-glow"
+            style="animation-delay: 0.4s"
+          >
+            <div class="text-purple-400 mb-4">
+              <div
+                class="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mb-4"
+              >
+                <i class="fas fa-chart-line text-2xl"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-white">
+              Data Expertise
+            </h3>
+            <p class="text-slate-300">
+              Proficient in STATA, SPSS, R, and data visualization tools to
+              transform complex data into actionable insights for program
+              improvement.
+            </p>
+            <div
+              class="mt-4 h-1 w-20 bg-gradient-to-r from-purple-500 to-transparent rounded-full"
+            ></div>
+          </div>
+
+          <div
+            class="glass-card p-6 rounded-xl fade-in hover-glow"
+            style="animation-delay: 0.6s"
+          >
+            <div class="text-pink-400 mb-4">
+              <div
+                class="w-16 h-16 bg-pink-500/20 rounded-full flex items-center justify-center mb-4"
+              >
+                <i class="fas fa-users text-2xl"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-white">
+              Community Impact
+            </h3>
+            <p class="text-slate-300">
+              Committed to research that addresses health disparities, climate
+              resilience, and rights of marginalized populations in Bangladesh.
+            </p>
+            <div
+              class="mt-4 h-1 w-20 bg-gradient-to-r from-pink-500 to-transparent rounded-full"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section
+      id="experience"
+      class="py-20 data-bg parallax-bg relative overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900/30"
+      ></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <h2
+          class="text-4xl font-bold text-center mb-16 gradient-text futuristic-font tracking-wider"
+        >
+          PROFESSIONAL EXPERIENCE
+        </h2>
+
+        <div class="relative pl-12 timeline fade-in">
+          <!-- Experience 1 -->
+          <div class="relative mb-12 pl-8">
+            <div class="timeline-dot"></div>
+            <div class="glass-card p-6 rounded-xl hover-glow">
+              <div
+                class="flex flex-col md:flex-row justify-between items-start mb-2"
+              >
+                <h3 class="text-xl font-semibold text-white">
+                  Technical Specialist- Research & Analysis
+                </h3>
+                <span
+                  class="bg-blue-500/20 text-blue-400 text-sm font-medium px-3 py-1 rounded-full mt-2 md:mt-0"
+                  >2022 - 2024</span
+                >
+              </div>
+              <p class="text-purple-400 font-medium mb-2">
+                Save the Children International (SCI)
+              </p>
+              <div class="md:flex items-center gap-4">
+                <div class="md:w-1/3 mb-4 md:mb-0">
+                  <img
+                    src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                    alt="Save the Children"
+                    class="w-full h-auto rounded-lg transform hover:scale-105 transition duration-500"
+                  />
+                </div>
+                <div class="md:w-2/3">
+                  <p class="text-slate-300 leading-relaxed">
+                    I have been actively involved in mixed-method studies,
+                    enhancing my expertise in the research field. I have gained
+                    valuable experience in program development, implementation,
+                    and evaluation processes for internal research. My passion
+                    lies in generating high-quality evidence to support
+                    effective program implementation and influence policy
+                    decisions. I have led over 25 research studies, contributing
+                    to evidence generation, learning briefs, quarterly progress
+                    reports, annual report writing, proposal development,
+                    training facilitation, and dashboard design. Additionally, I
+                    support various organizational needs, including DEI and GESI
+                    initiatives, humanitarian efforts, and cultural and sports
+                    activities.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience 2 -->
+          <div class="relative mb-12 pl-8">
+            <div class="timeline-dot"></div>
+            <div class="glass-card p-6 rounded-xl hover-glow">
+              <div
+                class="flex flex-col md:flex-row justify-between items-start mb-2"
+              >
+                <h3 class="text-xl font-semibold text-white">
+                  Senior Statistician
+                </h3>
+                <span
+                  class="bg-purple-500/20 text-purple-400 text-sm font-medium px-3 py-1 rounded-full mt-2 md:mt-0"
+                  >2018 - 2022</span
+                >
+              </div>
+              <p class="text-pink-400 font-medium mb-2">
+                BRAC James P Grant School of Public Health
+              </p>
+              <div class="md:flex items-center gap-4">
+                <div class="md:w-1/3 mb-4 md:mb-0">
+                  <img
+                    src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                    alt="BRAC University"
+                    class="w-full h-auto rounded-lg transform hover:scale-105 transition duration-500"
+                  />
+                </div>
+                <div class="md:w-2/3">
+                  <p class="text-slate-300 leading-relaxed">
+                    At BRAC JPGSPH, BRAC University, my primary responsibility
+                    lies in the Wellcome Trust project. This project focuses on
+                    identifying available secondary datasets and formulating
+                    policy scenarios to establish pathways toward creating
+                    equitable, healthy cities in various locations, namely
+                    Dhaka, Beijing, Vancouver, Tehran, Accra, and London.
+                    Additionally, I coordinated and executed a nationwide survey
+                    on Sexually Reproductive Health (SRH) among Persons with
+                    Disabilities (PWDs) in Bangladesh. This initiative relies on
+                    the Disability Detection Survey database as a valuable
+                    resource. The survey aims to gather insights into the
+                    sufferings, knowledge, perceptions, and rights of PWDs
+                    regarding SRH. Furthermore, I was responsible for organizing
+                    and creating a draft report for the BRAC baseline research.
+                    This research primarily aimed to assess the well-being of
+                    Ready-Made garment (RMG) workers by utilizing a one-stop
+                    service center. In parallel to these engagements, I also
+                    contribute as a teaching fellow (TF) for the Biostatistics
+                    course in the MPH programme at JPGSPH. My responsibilities
+                    in this capacity involve assisting and supporting students
+                    pursuing their MPH degree and facilitating the STATA lab
+                    session. To get better experience in programme development,
+                    implementation, and evaluation conducted by INGOs with
+                    better opportunities.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience 3 -->
+          <div class="relative mb-12 pl-8">
+            <div class="timeline-dot"></div>
+            <div class="glass-card p-6 rounded-xl hover-glow">
+              <div
+                class="flex flex-col md:flex-row justify-between items-start mb-2"
+              >
+                <h3 class="text-xl font-semibold text-white">
+                  Policy Assistant
+                </h3>
+                <span
+                  class="bg-blue-500/20 text-blue-400 text-sm font-medium px-3 py-1 rounded-full mt-2 md:mt-0"
+                  >2018</span
+                >
+              </div>
+              <p class="text-purple-400 font-medium mb-2">
+                Access to information, Prime Minister's Office, Bangladesh
+              </p>
+              <div class="md:flex items-center gap-4">
+                <div class="md:w-1/3 mb-4 md:mb-0">
+                  <img
+                    src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                    alt="Policy work"
+                    class="w-full h-auto rounded-lg transform hover:scale-105 transition duration-500"
+                  />
+                </div>
+                <div class="md:w-2/3">
+                  <p class="text-slate-300 leading-relaxed">
+                    As a Policy Assistant in a2i, my primary responsibility
+                    involved assisting with a2i's Skill for Employment team.
+                    This assistance aimed to facilitate the implementation of a
+                    skills development program across 100 economic zones in
+                    Bangladesh. Furthermore, I contributed to skills development
+                    initiatives benefiting 350,000 beneficiaries of the Ekti
+                    Bari Ekti Khamar (EBEK) projects. Additionally, I played a
+                    key role in district branding initiatives within the tourism
+                    sector, covering 37 upazilas. In addition to these
+                    responsibilities, I coordinated an apprenticeship program
+                    targeting unemployed youth in the formal sector. This
+                    involved organizing a nationwide Training of Trainers (ToT)
+                    workshop. Moreover, I drafted multiple Memoranda of
+                    Understanding (MoUs) between government and private
+                    organizations. Furthermore, I had the opportunity to
+                    contribute to the design of the interface for the Skills
+                    Portal of Bangladesh, accessible at www.skills.gov.bd.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience 4 -->
+          <div class="relative pl-8">
+            <div class="timeline-dot"></div>
+            <div class="glass-card p-6 rounded-xl hover-glow">
+              <div
+                class="flex flex-col md:flex-row justify-between items-start mb-2"
+              >
+                <h3 class="text-xl font-semibold text-white">
+                  Research Assistant
+                </h3>
+                <span
+                  class="bg-purple-500/20 text-purple-400 text-sm font-medium px-3 py-1 rounded-full mt-2 md:mt-0"
+                  >2015 - 2018</span
+                >
+              </div>
+              <p class="text-pink-400 font-medium mb-2">
+                Access to information, UNDP & Prime Minister's Office,
+                Bangladesh
+              </p>
+              <div class="md:flex items-center gap-4">
+                <div class="md:w-1/3 mb-4 md:mb-0">
+                  <img
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                    alt="Research work"
+                    class="w-full h-auto rounded-lg transform hover:scale-105 transition duration-500"
+                  />
+                </div>
+                <div class="md:w-2/3">
+                  <p class="text-slate-300 leading-relaxed">
+                    As a Research Assistant in a2i, my primary responsibility
+                    was to analyze survey data of various service simplification
+                    processes (SPS). Conducted monitoring and evaluation
+                    activities against the results and set measurable indicators
+                    for each team of a2i based on the annual working plan in
+                    line with the M&E Framework. Also assisted in drafting the
+                    Prime Minister's Office's reporting of different time
+                    periods (quarterly and year-end progress) and for the other
+                    donors (UNDP & USAID) on time and according to their
+                    requirements. Assisted in designing the interface of the
+                    Open Government Data (OGD) Portal of Bangladesh and the data
+                    management process of this portal, www.data.gov.bd, and also
+                    assisted in designing the citizen-centric mutation system in
+                    www.land.gov.bd by applying RCT in 46 Upazilas with the help
+                    of BIT.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 relative overflow-hidden">
+      <div
+        class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center opacity-10"
+      ></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <h2
+          class="text-4xl font-bold text-center mb-16 gradient-text futuristic-font tracking-wider"
+        >
+          EDUCATION
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8 fade-in">
+          <div class="glass-card p-6 rounded-xl hover-glow">
+            <div class="flex items-start">
+              <div
+                class="bg-blue-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
+              >
+                <i class="fas fa-graduation-cap text-blue-400 text-2xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-1 text-white">
+                  Master of Science (M.Sc.) in Statistics
+                </h3>
+                <p class="text-blue-400 font-medium mb-2">
+                  University of Dhaka
+                </p>
+                <p class="text-slate-300">2014</p>
+                <p class="text-slate-300 mt-2">
+                  Specialized in Biostatistics and Informatics with research
+                  focus on applied statistical methods for public health.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card p-6 rounded-xl hover-glow">
+            <div class="flex items-start">
+              <div
+                class="bg-purple-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
+              >
+                <i class="fas fa-university text-purple-400 text-2xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-1 text-white">
+                  Bachelor of Science (B.Sc.) in Statistics
+                </h3>
+                <p class="text-purple-400 font-medium mb-2">
+                  University of Dhaka
+                </p>
+                <p class="text-slate-300">2013</p>
+                <p class="text-slate-300 mt-2">
+                  Focused on statistical theory, probability, computational
+                  statistics, and data analysis techniques.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Teaching Activities -->
+        <h3
+          class="text-3xl font-semibold mt-16 mb-8 text-center gradient-text futuristic-font tracking-wider"
+        >
+          TEACHING ACTIVITIES
+        </h3>
+        <div class="grid md:grid-cols-2 gap-6 fade-in">
+          <div class="glass-card p-6 rounded-xl grid-item">
+            <div class="flex items-start">
+              <div
+                class="bg-blue-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
+              >
+                <i class="fas fa-chalkboard-teacher text-blue-400 text-xl"></i>
+              </div>
+              <div>
+                <p class="font-medium text-blue-400">2021-2022</p>
+                <h3 class="text-lg font-semibold mb-1 text-white">
+                  Senior Teaching Fellow
+                </h3>
+                <p class="text-slate-300">
+                  Biostatistics (MPH-521) at BRAC James P Grant School of Public
+                  Health, BRAC University
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card p-6 rounded-xl grid-item">
+            <div class="flex items-start">
+              <div
+                class="bg-purple-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
+              >
+                <i class="fas fa-users text-purple-400 text-xl"></i>
+              </div>
+              <div>
+                <p class="font-medium text-purple-400">2020-2021</p>
+                <h3 class="text-lg font-semibold mb-1 text-white">
+                  Co-supervisor
+                </h3>
+                <p class="text-slate-300">
+                  Summative Learning Projects for 6 Master of Public Health
+                  (MPH) students
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card p-6 rounded-xl grid-item">
+            <div class="flex items-start">
+              <div
+                class="bg-blue-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
+              >
+                <i class="fas fa-chalkboard text-blue-400 text-xl"></i>
+              </div>
+              <div>
+                <p class="font-medium text-blue-400">2019-2020</p>
+                <h3 class="text-lg font-semibold mb-1 text-white">
+                  Teaching Fellow
+                </h3>
+                <p class="text-slate-300">
+                  Biostatistics course in MPH program at BRAC University
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card p-6 rounded-xl grid-item">
+            <div class="flex items-start">
+              <div
+                class="bg-purple-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
+              >
+                <i class="fas fa-laptop-code text-purple-400 text-xl"></i>
+              </div>
+              <div>
+                <p class="font-medium text-purple-400">2018-2019</p>
+                <h3 class="text-lg font-semibold mb-1 text-white">
+                  Teaching Assistant
+                </h3>
+                <p class="text-slate-300">
+                  Biostatistics and facilitated STATA lab sessions
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Training Facilitation -->
+        <h3
+          class="text-3xl font-semibold mt-16 mb-8 text-center gradient-text futuristic-font tracking-wider"
+        >
+          TRAINING FACILITATION
+        </h3>
+        <div class="grid md:grid-cols-2 gap-6 fade-in">
+          <div class="glass-card p-6 rounded-xl grid-item">
+            <div class="flex items-start">
+              <div
+                class="bg-blue-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
+              >
+                <i class="fas fa-laptop text-blue-400 text-xl"></i>
+              </div>
+              <div>
+                <p class="font-medium text-blue-400">2024</p>
+                <h3 class="text-lg font-semibold mb-1 text-white">
+                  Building Ethical and Digital Data Excellence
+                </h3>
+                <p class="text-slate-300">KoboKollect design workshop</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card p-6 rounded-xl grid-item">
+            <div class="flex items-start">
+              <div
+                class="bg-purple-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
+              >
+                <i class="fas fa-chart-bar text-purple-400 text-xl"></i>
+              </div>
+              <div>
+                <p class="font-medium text-purple-400">2024</p>
+                <h3 class="text-lg font-semibold mb-1 text-white">
+                  Advanced Research Methodology & Data Analysis
+                </h3>
+                <p class="text-slate-300">Using SPSS, STATA, & Atlas TI</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card p-6 rounded-xl grid-item">
+            <div class="flex items-start">
+              <div
+                class="bg-blue-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
+              >
+                <i class="fas fa-database text-blue-400 text-xl"></i>
+              </div>
+              <div>
+                <p class="font-medium text-blue-400">2022</p>
+                <h3 class="text-lg font-semibold mb-1 text-white">
+                  Quantitative Data Analysis Using STATA
+                </h3>
+                <p class="text-slate-300">3-day intensive training</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card p-6 rounded-xl grid-item">
+            <div class="flex items-start">
+              <div
+                class="bg-purple-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
+              >
+                <i class="fas fa-file-alt text-purple-400 text-xl"></i>
+              </div>
+              <div>
+                <p class="font-medium text-purple-400">2020</p>
+                <h3 class="text-lg font-semibold mb-1 text-white">
+                  Basic Quantitative Research Methods
+                </h3>
+                <p class="text-slate-300">
+                  Data Analysis, and Report Writing using STATA (6-day training)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Learning & Training Received -->
+        <h3
+          class="text-3xl font-semibold mt-16 mb-8 text-center gradient-text futuristic-font tracking-wider"
+        >
+          LEARNING & TRAINING RECEIVED
+        </h3>
+        <div class="grid md:grid-cols-2 gap-6 fade-in">
+          <div class="glass-card p-6 rounded-xl grid-item">
+            <div class="flex items-start">
+              <div
+                class="bg-blue-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
+              >
+                <i class="fas fa-certificate text-blue-400 text-xl"></i>
+              </div>
+              <div>
+                <p class="font-medium text-blue-400">2025</p>
+                <h3 class="text-lg font-semibold mb-1 text-white">
+                  MEAL DPro Certification
+                </h3>
+                <p class="text-slate-300">
+                  Monitoring, Evaluation, Accountability and Learning for
+                  Development Professionals
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card p-6 rounded-xl grid-item">
+            <div class="flex items-start">
+              <div
+                class="bg-purple-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
+              >
+                <i class="fas fa-shield-alt text-purple-400 text-xl"></i>
+              </div>
+              <div>
+                <p class="font-medium text-purple-400">2025</p>
+                <h3 class="text-lg font-semibold mb-1 text-white">
+                  Emergency Response Training (ERT)
+                </h3>
+                <p class="text-slate-300">
+                  Certification in humanitarian response protocols
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card p-6 rounded-xl grid-item">
+            <div class="flex items-start">
+              <div
+                class="bg-blue-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
+              >
+                <i class="fas fa-ven-scale text-blue-400 text-xl"></i>
+              </div>
+              <div>
+                <p class="font-medium text-blue-400">2023</p>
+                <h3 class="text-lg font-semibold mb-1 text-white">
+                  ToT on Gender Equity and Social Inclusion
+                </h3>
+                <p class="text-slate-300">Training of Trainers certification</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card p-6 rounded-xl grid-item">
+            <div class="flex items-start">
+              <div
+                class="bg-purple-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
+              >
+                <i class="fas fa-project-diagram text-purple-400 text-xl"></i>
+              </div>
+              <div>
+                <p class="font-medium text-purple-400">2022</p>
+                <h3 class="text-lg font-semibold mb-1 text-white">
+                  Project Management Methodology (PMM) Flex
+                </h3>
+                <p class="text-slate-300">
+                  SCI certification in project management
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="py-20 relative overflow-hidden">
+      <div
+        class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80')] bg-cover bg-center opacity-10"
+      ></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <h2
+          class="text-4xl font-bold text-center mb-16 gradient-text futuristic-font tracking-wider"
+        >
+          RESEARCH EXPEDITIONS
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <!-- Principal Investigator Projects -->
+          <div class="fade-in">
+            <h3
+              class="text-xl font-semibold mb-6 text-center bg-blue-500/20 text-blue-400 py-3 px-6 rounded-lg futuristic-font tracking-wider"
+            >
+              PRINCIPAL INVESTIGATOR
+            </h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="glass-card p-4 rounded-lg grid-item">
+                <p class="font-medium text-blue-400">2025</p>
+                <h3 class="text-lg font-semibold mb-2 text-white">
+                  Informal Settlements Survey
+                </h3>
+                <p class="text-slate-300">
+                  DNCC, DSCC, and Chattogram City Corporations
+                </p>
+              </div>
+
+              <div class="glass-card p-4 rounded-lg grid-item">
+                <p class="font-medium text-blue-400">2024</p>
+                <h3 class="text-lg font-semibold mb-2 text-white">
+                  BHA Baseline Study
+                </h3>
+                <p class="text-slate-300">
+                  Strengthening local leadership to promote resilience in Sylhet
+                  region
+                </p>
+              </div>
+
+              <div class="glass-card p-4 rounded-lg grid-item">
+                <p class="font-medium text-blue-400">2024</p>
+                <h3 class="text-lg font-semibold mb-2 text-white">
+                  Skills Training Impact Study
+                </h3>
+                <p class="text-slate-300">
+                  Livelihoods of adolescents in Cox's Bazar host community
+                </p>
+              </div>
+
+              <div class="glass-card p-4 rounded-lg grid-item">
+                <p class="font-medium text-blue-400">2024</p>
+                <h3 class="text-lg font-semibold mb-2 text-white">
+                  Mamota Project Baseline
+                </h3>
+                <p class="text-slate-300">
+                  Maternal and child health initiative evaluation
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Co-Investigator Projects -->
+          <div class="fade-in" style="animation-delay: 0.2s">
+            <h3
+              class="text-xl font-semibold mb-6 text-center bg-purple-500/20 text-purple-400 py-3 px-6 rounded-lg futuristic-font tracking-wider"
+            >
+              CO-INVESTIGATOR
+            </h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="glass-card p-4 rounded-lg grid-item">
+                <p class="font-medium text-purple-400">2022</p>
+                <h3 class="text-lg font-semibold mb-2 text-white">
+                  Multisectoral Needs Assessment
+                </h3>
+                <p class="text-slate-300">
+                  Cox's Bazar, Bangladesh (Save the Children internal study)
+                </p>
+              </div>
+
+              <div class="glass-card p-4 rounded-lg grid-item">
+                <p class="font-medium text-purple-400">2022</p>
+                <h3 class="text-lg font-semibold mb-2 text-white">
+                  Hypertension and Obesity Prevalence
+                </h3>
+                <p class="text-slate-300">
+                  National health assessment (Save the Children internal study)
+                </p>
+              </div>
+
+              <div class="glass-card p-4 rounded-lg grid-item">
+                <p class="font-medium text-purple-400">2022</p>
+                <h3 class="text-lg font-semibold mb-2 text-white">
+                  DANIDA SPA Baseline
+                </h3>
+                <p class="text-slate-300">
+                  Integrated education and child protection services for
+                  Rohingya refugees
+                </p>
+              </div>
+
+              <div class="glass-card p-4 rounded-lg grid-item">
+                <p class="font-medium text-purple-400">2022</p>
+                <h3 class="text-lg font-semibold mb-2 text-white">
+                  COVID-19 Education Impact
+                </h3>
+                <p class="text-slate-300">
+                  Children's education and women's livelihoods in urban slums
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Research Grants -->
+        <h3
+          class="text-3xl font-semibold mb-8 text-center gradient-text futuristic-font tracking-wider"
+        >
+          RESEARCH/PROGRAM GRANTS
+        </h3>
+        <div class="grid md:grid-cols-2 gap-6 fade-in">
+          <div class="glass-card p-6 rounded-lg grid-item">
+            <p class="font-medium text-blue-400">2023</p>
+            <h3 class="text-xl font-semibold mb-2 text-white">
+              Child Climate Resilience and Forced Displacement
+            </h3>
+            <p class="text-slate-300 mb-4">
+              Unravelling Factors, Assessing Impact, and Guiding Interventions
+              (USD 20,725)
+            </p>
+            <p class="text-blue-400">Funded by MDI, SCI</p>
+          </div>
+
+          <div class="glass-card p-6 rounded-lg grid-item">
+            <p class="font-medium text-purple-400">2022</p>
+            <h3 class="text-xl font-semibold mb-2 text-white">
+              Primary School Dropout Issue
+            </h3>
+            <p class="text-slate-300 mb-4">
+              Baseline Study amid COVID-19 Pandemic (USD 48,000)
+            </p>
+            <p class="text-purple-400">Funded by BRAC</p>
+          </div>
+
+          <div class="glass-card p-6 rounded-lg grid-item">
+            <p class="font-medium text-blue-400">2020</p>
+            <h3 class="text-xl font-semibold mb-2 text-white">
+              SRHR among WGWDs facing violence
+            </h3>
+            <p class="text-slate-300 mb-4">Baseline study (USD 15,000)</p>
+            <p class="text-blue-400">Funded by ARROW</p>
+          </div>
+
+          <div class="glass-card p-6 rounded-lg grid-item">
+            <p class="font-medium text-purple-400">2019-2020</p>
+            <h3 class="text-xl font-semibold mb-2 text-white">
+              Cross-border Trafficking Networks
+            </h3>
+            <p class="text-slate-300 mb-4">
+              Formative, Baseline, Operational, and Endline Research (USD
+              98,170)
+            </p>
+            <p class="text-purple-400">Funded by BRAC</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-20 relative overflow-hidden">
+      <div
+        class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80')] bg-cover bg-center opacity-10"
+      ></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <h2
+          class="text-4xl font-bold text-center mb-16 gradient-text futuristic-font tracking-wider"
+        >
+          PUBLICATIONS
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-6 fade-in">
+          <div class="glass-card p-6 rounded-lg grid-item">
+            <p class="font-medium text-blue-400">
+              Rahman, S, Haque, S.M, Chowdhury, M.U,* et. al –(2024)
+            </p>
+            <h3 class="text-xl font-semibold mb-2 text-white">
+              Bangladesh - Eastern flood needs assessment report
+            </h3>
+            <p class="text-slate-300 mb-4">September 2024</p>
+            <a
+              href="https://reliefweb.int/report/bangladesh/bangladesh-eastern-flood-needs-assessment-report-september-2024"
+              class="text-blue-400 hover:text-blue-300 underline"
+              target="_blank"
+              >View Publication</a
+            >
+          </div>
+
+          <div class="glass-card p-6 rounded-lg grid-item">
+            <p class="font-medium text-purple-400">
+              Lim, I. E., Mahmud, I., Chowdhury, M. U.,* Kaiser, A., Bonny, F.
+              A., Akanbonga, S., & Hasan, M. T. (2023)
+            </p>
+            <h3 class="text-xl font-semibold mb-2 text-white">
+              Early Childhood Development (ECD) in Ghana
+            </h3>
+            <p class="text-slate-300 mb-4">
+              Assessing the Status and Determinants of the Literacy–Numeracy,
+              Physical, Social–Emotional, and Learning Domains
+            </p>
+            <a
+              href="https://doi.org/10.1007/S13158-023-00349-Y"
+              class="text-purple-400 hover:text-purple-300 underline"
+              target="_blank"
+              >View Publication</a
+            >
+          </div>
+
+          <div class="glass-card p-6 rounded-lg grid-item">
+            <p class="font-medium text-blue-400">
+              Akanbonga, S., Hasan, T., Chowdhury, MU.,* Kaiser, A., Akter
+              Bonny, F., Lim, I. E., & Mahmud, I. (2023)
+            </p>
+            <h3 class="text-xl font-semibold mb-2 text-white">
+              Infant and young child feeding practices in Ghana
+            </h3>
+            <p class="text-slate-300 mb-4">
+              Findings from Ghana Multiple Indicator Cluster Survey, 2017–2018
+            </p>
+            <a
+              href="https://doi.org/10.1371/JOURNAL.PONE.0286055"
+              class="text-blue-400 hover:text-blue-300 underline"
+              target="_blank"
+              >View Publication</a
+            >
+          </div>
+
+          <div class="glass-card p-6 rounded-lg grid-item">
+            <p class="font-medium text-purple-400">
+              Urme SA, Radia MA, Alam R, Chowdhury MU*, Hasan S, Ahmed S, Sara
+              HH, Islam MS, Jerin DT, Hema PS, Rahman M, Islam AKM, Hasan MT,
+              Quayyum Z. (2021)
+            </p>
+            <h3 class="text-xl font-semibold mb-2 text-white">
+              Dhaka landfill waste practices
+            </h3>
+            <p class="text-slate-300 mb-4">
+              Addressing urban pollution and health hazards
+            </p>
+            <a
+              href="https://doi.org/10.5334/bc.108"
+              class="text-purple-400 hover:text-purple-300 underline"
+              target="_blank"
+              >View Publication</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 relative overflow-hidden">
+      <div
+        class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80')] bg-cover bg-center opacity-10"
+      ></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <h2
+          class="text-4xl font-bold text-center mb-16 gradient-text futuristic-font tracking-wider"
+        >
+          TECHNICAL EXPERTISE
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-6 fade-in">
+          <div class="glass-card p-6 rounded-xl hover-glow">
+            <div class="skill-icon bg-blue-500/20 hover:bg-blue-500/30">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/2906/2906274.png"
+                alt="MEAL"
+                class="h-8 w-8"
+              />
+            </div>
+            <h3
+              class="text-xl font-semibold mb-4 text-blue-400 futuristic-font"
+            >
+              MEAL ACTIVITIES
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm hover:bg-blue-500/30 hover:scale-105 transition"
+                >Result Framework</span
+              >
+              <span
+                class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm hover:bg-blue-500/30 hover:scale-105 transition"
+                >Log-Frame</span
+              >
+              <span
+                class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm hover:bg-blue-500/30 hover:scale-105 transition"
+                >MEAL Budgeting</span
+              >
+              <span
+                class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm hover:bg-blue-500/30 hover:scale-105 transition"
+                >Project Management</span
+              >
+              <span
+                class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm hover:bg-blue-500/30 hover:scale-105 transition"
+                >DIP</span
+              >
+              <span
+                class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm hover:bg-blue-500/30 hover:scale-105 transition"
+                >Knowledge Management</span
+              >
+              <span
+                class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm hover:bg-blue-500/30 hover:scale-105 transition"
+                >CLA</span
+              >
+              <span
+                class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm hover:bg-blue-500/30 hover:scale-105 transition"
+                >Accountability</span
+              >
+              <span
+                class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm hover:bg-blue-500/30 hover:scale-105 transition"
+                >MIS</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="glass-card p-6 rounded-xl hover-glow"
+            style="animation-delay: 0.2s"
+          >
+            <div class="skill-icon bg-purple-500/20 hover:bg-purple-500/30">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png"
+                alt="Data collection"
+                class="h-8 w-8"
+              />
+            </div>
+            <h3
+              class="text-xl font-semibold mb-4 text-purple-400 futuristic-font"
+            >
+              DATA COLLECTION TOOLS
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-sm hover:bg-purple-500/30 hover:scale-105 transition"
+                >KOBO Collect</span
+              >
+              <span
+                class="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-sm hover:bg-purple-500/30 hover:scale-105 transition"
+                >Survey CTO</span
+              >
+              <span
+                class="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-sm hover:bg-purple-500/30 hover:scale-105 transition"
+                >Survey Monkey</span
+              >
+              <span
+                class="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-sm hover:bg-purple-500/30 hover:scale-105 transition"
+                >Qualtrics</span
+              >
+              <span
+                class="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-sm hover:bg-purple-500/30 hover:scale-105 transition"
+                >Forms</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="glass-card p-6 rounded-xl hover-glow"
+            style="animation-delay: 0.4s"
+          >
+            <div class="skill-icon bg-blue-500/20 hover:bg-blue-500/30">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/2620/2620971.png"
+                alt="Data analysis"
+                class="h-8 w-8"
+              />
+            </div>
+            <h3
+              class="text-xl font-semibold mb-4 text-blue-400 futuristic-font"
+            >
+              DATA ANALYSIS
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm hover:bg-blue-500/30 hover:scale-105 transition"
+                >STATA</span
+              >
+              <span
+                class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm hover:bg-blue-500/30 hover:scale-105 transition"
+                >SPSS</span
+              >
+              <span
+                class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm hover:bg-blue-500/30 hover:scale-105 transition"
+                >EXCEL</span
+              >
+              <span
+                class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm hover:bg-blue-500/30 hover:scale-105 transition"
+                >Atlas TI</span
+              >
+              <span
+                class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm hover:bg-blue-500/30 hover:scale-105 transition"
+                >NVivo</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="py-20 tech-bg parallax-bg relative overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900/30"
+      ></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <h2
+          class="text-4xl font-bold text-center mb-16 gradient-text futuristic-font tracking-wider"
+        >
+          CONTACT & REFERENCES
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8 fade-in">
+          <div class="glass-card p-6 rounded-xl hover-glow">
+            <h3
+              class="text-xl font-semibold mb-4 text-blue-400 futuristic-font"
+            >
+              CONTACT INFORMATION
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <div class="bg-blue-500/20 p-2 rounded-lg mr-4">
+                  <i class="fas fa-phone text-blue-400"></i>
+                </div>
+                <div>
+                  <p class="font-medium text-white">Mobile</p>
+                  <p class="text-slate-300">+8801791930932</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="bg-blue-500/20 p-2 rounded-lg mr-4">
+                  <i class="fas fa-envelope text-blue-400"></i>
+                </div>
+                <div>
+                  <p class="font-medium text-white">Email</p>
+                  <p class="text-slate-300">uzzal77sbi@gmail.com</p>
+                  <p class="text-slate-300">
+                    uzzal.chowdhury@savethechildren.org
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="bg-blue-500/20 p-2 rounded-lg mr-4">
+                  <i class="fab fa-skype text-blue-400"></i>
+                </div>
+                <div>
+                  <p class="font-medium text-white">Skype</p>
+                  <p class="text-slate-300">uzzal77sbi@hotmail.com</p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-6 overflow-hidden rounded-lg">
+              <img
+                src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="Contact"
+                class="w-full h-48 object-cover hover:scale-110 transition duration-500"
+              />
+            </div>
+          </div>
+
+          <div
+            class="glass-card p-6 rounded-xl hover-glow"
+            style="animation-delay: 0.2s"
+          >
+            <h3
+              class="text-xl font-semibold mb-4 text-purple-400 futuristic-font"
+            >
+              REFERENCES
+            </h3>
+            <div class="space-y-6">
+              <div
+                class="bg-slate-800/50 p-4 rounded-lg hover:bg-slate-800/70 transition"
+              >
+                <p class="font-medium text-white">Reefat Bin Sattar</p>
+                <p class="text-slate-300">
+                  Director - PDQ, Save the Children International in Bangladesh
+                </p>
+                <p class="text-slate-300">
+                  House CWN (A) 35, Road 43, Gulshan 2, Dhaka 1212, Bangladesh
+                </p>
+                <p class="text-slate-300">
+                  Email: reefat.sattar@savethechildren.org
+                </p>
+                <p class="text-slate-300">M: +880-1777763988</p>
+              </div>
+              <div
+                class="bg-slate-800/50 p-4 rounded-lg hover:bg-slate-800/70 transition"
+              >
+                <p class="font-medium text-white">Md.Tanvir Hasan, PhD</p>
+                <p class="text-slate-300">
+                  Associate Professor and Co-Director, Research
+                </p>
+                <p class="text-slate-300">
+                  Co-Director, Centre of Excellence for Urban Equity & Health
+                  (CUEH)
+                </p>
+                <p class="text-slate-300">
+                  BRAC James P Grant School of Public Health, BRAC University
+                </p>
+                <p class="text-slate-300">Email: thasan@bracu.ac.bd</p>
+                <p class="text-slate-300">M: +8801737943882</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-700/30 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <p
+              class="text-xl font-bold text-white futuristic-font tracking-wider"
+            >
+              MD. UZZAL CHOWDHURY
+            </p>
+            <p class="text-slate-400">
+              Research Personnel | Monitoring, Evaluation, Accountability, and
+              Learning (MEAL) Specialist
+            </p>
+          </div>
+          <div class="flex space-x-4">
+            <a
+              href="mailto:uzzal77sbi@gmail.com"
+              class="bg-blue-500/20 text-blue-400 p-3 rounded-full hover:bg-blue-500/30 transition hover:-translate-y-1 hover:shadow-lg"
+            >
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a
+              href="tel:+8801791930932"
+              class="bg-purple-500/20 text-purple-400 p-3 rounded-full hover:bg-purple-500/30 transition hover:-translate-y-1 hover:shadow-lg"
+            >
+              <i class="fas fa-phone"></i>
+            </a>
+            <a
+              href="skype:uzzal77sbi@hotmail.com"
+              class="bg-pink-500/20 text-pink-400 p-3 rounded-full hover:bg-pink-500/30 transition hover:-translate-y-1 hover:shadow-lg"
+            >
+              <i class="fab fa-skype"></i>
+            </a>
+            <a
+              href="#"
+              class="bg-slate-700/50 text-slate-300 p-3 rounded-full hover:bg-slate-600/50 transition hover:-translate-y-1 hover:shadow-lg"
+            >
+              <i class="fas fa-file-pdf"></i>
+            </a>
+          </div>
+        </div>
+        <div class="mt-8 pt-8 border-t border-slate-700/20 text-center">
+          <p class="text-slate-500">
+            &copy; 2024 Md. Uzzal Chowdhury. All rights reserved.
+          </p>
+        </div>
+      </div>
+      <div
+        class="absolute -bottom-20 -right-20 w-64 h-64 bg-blue-500/20 rounded-full filter blur-3xl animate-pulse-slow"
+      ></div>
+      <div
+        class="absolute -left-20 -top-20 w-64 h-64 bg-purple-500/20 rounded-full filter blur-3xl animate-pulse-slow"
+        style="animation-delay: 1s"
+      ></div>
+    </footer>
+
+    <script>
+      // Full page menu functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuBtn = document.getElementById("menu-btn");
+        const closeMenu = document.getElementById("close-menu");
+        const fullpageMenu = document.getElementById("fullpage-menu");
+
+        menuBtn.addEventListener("click", function () {
+          fullpageMenu.classList.add("active");
+          document.body.style.overflow = "hidden";
+          menuBtn.classList.add("active");
+        });
+
+        closeMenu.addEventListener("click", function () {
+          fullpageMenu.classList.remove("active");
+          document.body.style.overflow = "auto";
+          menuBtn.classList.remove("active");
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll(".menu-links a").forEach((link) => {
+          link.addEventListener("click", function () {
+            fullpageMenu.classList.remove("active");
+            document.body.style.overflow = "auto";
+            menuBtn.classList.remove("active");
+          });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute("href")).scrollIntoView({
+              behavior: "smooth",
+            });
+          });
+        });
+
+        // Animation on scroll
+        const fadeElements = document.querySelectorAll(".fade-in");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+          }
+        );
+
+        fadeElements.forEach((element) => {
+          observer.observe(element);
+        });
+
+        // Navbar background change on scroll
+        window.addEventListener("scroll", function () {
+          const nav = document.querySelector("nav");
+          if (window.scrollY > 50) {
+            nav.classList.add("shadow-lg", "bg-slate-900/95");
+          } else {
+            nav.classList.remove("shadow-lg", "bg-slate-900/95");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
