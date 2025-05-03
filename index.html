@@ -13,13 +13,30 @@
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Framer Motion -->
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Slick Carousel -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
     <style>
       :root {
         --primary: #3b82f6;
         --secondary: #8b5cf6;
         --accent: #ec4899;
       }
-
       body {
         font-family: "Poppins", sans-serif;
         scroll-behavior: smooth;
@@ -27,12 +44,10 @@
         color: #e2e8f0;
         overflow-x: hidden;
       }
-
       .futuristic-font {
         font-family: "Orbitron", sans-serif;
         letter-spacing: 1px;
       }
-
       .gradient-text {
         background: linear-gradient(
           135deg,
@@ -44,7 +59,6 @@
         background-clip: text;
         color: transparent;
       }
-
       .gradient-bg {
         background: linear-gradient(
           135deg,
@@ -53,7 +67,6 @@
           var(--accent)
         );
       }
-
       .glass-card {
         background: rgba(30, 41, 59, 0.5);
         backdrop-filter: blur(12px);
@@ -61,13 +74,11 @@
         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
         transition: all 0.3s ease;
       }
-
       .glass-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 12px 24px rgba(59, 130, 246, 0.3);
         border-color: rgba(59, 130, 246, 0.4);
       }
-
       .hexagon {
         clip-path: polygon(
           50% 0%,
@@ -78,7 +89,6 @@
           0% 25%
         );
       }
-
       /* Animations */
       @keyframes float {
         0% {
@@ -91,7 +101,6 @@
           transform: translateY(0px);
         }
       }
-
       @keyframes fadeIn {
         from {
           opacity: 0;
@@ -102,7 +111,6 @@
           transform: translateY(0);
         }
       }
-
       @keyframes pulse {
         0% {
           box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
@@ -114,20 +122,44 @@
           box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
         }
       }
-
+      @keyframes slideInLeft {
+        from {
+          transform: translateX(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      @keyframes slideInRight {
+        from {
+          transform: translateX(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
       .floating {
         animation: float 6s ease-in-out infinite;
       }
-
       .fade-in {
         animation: fadeIn 1s forwards;
         opacity: 0;
       }
-
+      .slide-in-left {
+        animation: slideInLeft 0.5s forwards;
+        opacity: 0;
+      }
+      .slide-in-right {
+        animation: slideInRight 0.5s forwards;
+        opacity: 0;
+      }
       .pulse {
         animation: pulse 2s infinite;
       }
-
       .timeline::before {
         content: "";
         position: absolute;
@@ -142,7 +174,6 @@
           var(--accent)
         );
       }
-
       .timeline-dot {
         position: absolute;
         left: 12px;
@@ -154,7 +185,6 @@
         border: 3px solid #1e293b;
         box-shadow: 0 0 10px rgba(59, 130, 246, 0.7);
       }
-
       .skill-icon {
         width: 60px;
         height: 60px;
@@ -165,42 +195,33 @@
         margin-bottom: 12px;
         transition: all 0.3s ease;
       }
-
       .skill-icon:hover {
         transform: scale(1.1) rotate(5deg);
       }
-
       .hover-grow {
         transition: all 0.3s ease;
       }
-
       .hover-grow:hover {
         transform: scale(1.02);
       }
-
       .parallax-bg {
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
       }
-
       .tech-bg {
         background-image: url("https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80");
       }
-
       .data-bg {
         background-image: url("https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80");
       }
-
       .research-bg {
         background-image: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80");
       }
-
       .glow {
         text-shadow: 0 0 10px rgba(59, 130, 246, 0.7);
       }
-
       /* Full height modern menu */
       .fullpage-menu {
         position: fixed;
@@ -220,20 +241,17 @@
         transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
         transform: translateY(-20px);
       }
-
       .fullpage-menu.active {
         opacity: 1;
         pointer-events: all;
         transform: translateY(0);
       }
-
       .menu-links {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 2rem;
       }
-
       .menu-links a {
         color: white;
         font-size: 2.5rem;
@@ -243,11 +261,9 @@
         transition: all 0.3s ease;
         font-family: "Orbitron", sans-serif;
       }
-
       .menu-links a:hover {
         color: var(--primary);
       }
-
       .menu-links a::after {
         content: "";
         position: absolute;
@@ -258,11 +274,9 @@
         background: linear-gradient(to right, var(--primary), var(--secondary));
         transition: width 0.4s ease;
       }
-
       .menu-links a:hover::after {
         width: 100%;
       }
-
       .close-menu {
         position: absolute;
         top: 2.5rem;
@@ -273,40 +287,385 @@
         transition: all 0.3s ease;
         z-index: 1001;
       }
-
       .close-menu:hover {
         color: var(--accent);
         transform: rotate(90deg);
       }
-
       .menu-btn {
         transition: all 0.3s ease;
       }
-
       .menu-btn.active {
         transform: rotate(90deg);
       }
-
       /* Grid item animation */
       .grid-item {
         transform: scale(0.95);
         transition: all 0.3s ease;
       }
-
       .grid-item:hover {
         transform: scale(1);
         box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
       }
-
+      /* Text truncation */
+      .truncate-text {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      .truncate-text.expanded {
+        -webkit-line-clamp: unset;
+      }
+      .read-more-btn {
+        color: var(--primary);
+        cursor: pointer;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        margin-top: 8px;
+        transition: all 0.3s ease;
+      }
+      .read-more-btn:hover {
+        color: var(--accent);
+      }
+      .read-more-btn i {
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+      }
+      .read-more-btn.expanded i {
+        transform: rotate(180deg);
+      }
       /* Responsive adjustments */
       @media (max-width: 768px) {
         .menu-links a {
           font-size: 1.8rem;
         }
+        .hero-content {
+          text-align: center;
+        }
+        .hero-buttons {
+          justify-content: center;
+        }
+        .timeline::before {
+          left: 15px;
+        }
+        .timeline-dot {
+          left: 7px;
+        }
+        .experience-content {
+          padding-left: 2rem;
+        }
+        .section-padding {
+          padding: 3rem 1rem;
+        }
+        .hexagon {
+          width: 200px;
+          height: 230px;
+        }
+        .skill-icon {
+          width: 50px;
+          height: 50px;
+        }
+      }
+      @media (max-width: 640px) {
+        .section-title {
+          font-size: 2rem;
+        }
+        .hero-title {
+          font-size: 2.5rem;
+        }
+        .hero-subtitle {
+          font-size: 1.5rem;
+        }
+        .glass-card {
+          padding: 1.5rem;
+        }
+        .grid-cols-1 {
+          grid-template-columns: 1fr;
+        }
+      }
+      /* Scroll progress indicator */
+      .scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 4px;
+        background: linear-gradient(to right, var(--primary), var(--accent));
+        z-index: 1000;
+        transition: width 0.1s ease;
+      }
+      /* Floating action button */
+      .fab {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        z-index: 100;
+        transition: all 0.3s ease;
+      }
+      .fab:hover {
+        transform: scale(1.1) rotate(90deg);
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+      }
+      /* Typed.js cursor */
+      .typed-cursor {
+        opacity: 1;
+        animation: typedjsBlink 0.7s infinite;
+        -webkit-animation: typedjsBlink 0.7s infinite;
+        animation: typedjsBlink 0.7s infinite;
+      }
+      @keyframes typedjsBlink {
+        50% {
+          opacity: 0;
+        }
+      }
+      @-webkit-keyframes typedjsBlink {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      /* Experience card redesign */
+      .exp-card {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+      .exp-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+          0 10px 10px rgba(0, 0, 0, 0.22);
+      }
+      .exp-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(59, 130, 246, 0.1),
+          rgba(139, 92, 246, 0.1)
+        );
+        z-index: -1;
+      }
+      .exp-card:hover::before {
+        background: linear-gradient(
+          135deg,
+          rgba(59, 130, 246, 0.2),
+          rgba(139, 92, 246, 0.2)
+        );
+      }
+      .exp-date {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(30, 41, 59, 0.8);
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+      .exp-org {
+        display: inline-block;
+        margin-bottom: 10px;
+        padding: 3px 10px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+      .exp-highlight {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 10px;
+      }
+      .exp-highlight::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 7px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--primary);
+      }
+      /* Stepper for education */
+      .stepper {
+        position: relative;
+        padding-left: 45px;
+      }
+      .stepper::before {
+        content: "";
+        position: absolute;
+        left: 20px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(
+          to bottom,
+          var(--primary),
+          var(--secondary)
+        );
+      }
+      .stepper-item {
+        position: relative;
+        padding-bottom: 30px;
+      }
+      .stepper-item:last-child {
+        padding-bottom: 0;
+      }
+      .stepper-item::before {
+        content: "";
+        position: absolute;
+        left: -25px;
+        top: 0;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var(--primary);
+        border: 3px solid #1e293b;
+      }
+      /* Testimonial slider */
+      .testimonial-slider {
+        width: 100%;
+        margin: 0 auto;
+      }
+      .testimonial-card {
+        background: rgba(30, 41, 59, 0.7);
+        border-radius: 16px;
+        padding: 30px;
+        margin: 0 15px;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+      .testimonial-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        overflow: hidden;
+        border: 3px solid var(--primary);
+      }
+      .testimonial-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .testimonial-quote {
+        font-style: italic;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .testimonial-quote::before,
+      .testimonial-quote::after {
+        content: '"';
+        font-size: 24px;
+        color: var(--primary);
+      }
+      .testimonial-name {
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+      .testimonial-title {
+        color: var(--primary);
+        font-size: 0.9rem;
+      }
+      /* Profile photo redesign */
+      .profile-container {
+        position: relative;
+        width: 280px;
+        height: 320px;
+      }
+      .profile-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+        border: 5px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+      }
+      .profile-container:hover .profile-photo {
+        transform: scale(1.05);
+        border-color: rgba(59, 130, 246, 0.5);
+      }
+      .profile-decoration {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 2px dashed var(--primary);
+        border-radius: 20px;
+        top: 15px;
+        left: 15px;
+        z-index: -1;
+        opacity: 0.5;
+      }
+      /* Download CV button */
+      .download-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 24px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+      }
+      .download-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+      }
+      .download-btn i {
+        margin-right: 8px;
+      }
+      /* Slick slider overrides */
+      .slick-dots li button:before {
+        color: var(--primary) !important;
+        opacity: 0.5 !important;
+      }
+      .slick-dots li.slick-active button:before {
+        color: var(--primary) !important;
+        opacity: 1 !important;
+      }
+      .slick-prev:before,
+      .slick-next:before {
+        color: var(--primary) !important;
       }
     </style>
   </head>
   <body class="antialiased">
+    <!-- Scroll progress indicator -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Floating action button -->
+    <div class="fab" id="fab">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+
     <!-- Navigation -->
     <nav
       class="fixed w-full bg-slate-900/80 backdrop-blur-md z-50 border-b border-slate-700/30 transition-all duration-300"
@@ -316,7 +675,7 @@
           <div class="flex items-center">
             <span
               class="text-xl font-bold gradient-text futuristic-font tracking-wider"
-              >UZZAL CHOWDHURY</span
+              >UZZAL</span
             >
           </div>
           <div class="hidden md:flex items-center space-x-8">
@@ -407,7 +766,6 @@
         </div>
       </div>
     </nav>
-
     <!-- Full Page Menu -->
     <div class="fullpage-menu" id="fullpage-menu">
       <div class="close-menu" id="close-menu">
@@ -435,7 +793,6 @@
         >
       </div>
     </div>
-
     <!-- Hero Section -->
     <header class="pt-32 pb-24 tech-bg parallax-bg relative overflow-hidden">
       <div
@@ -444,18 +801,19 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="md:flex items-center justify-between">
           <div
-            class="md:w-1/2 mb-12 md:mb-0 fade-in"
+            class="md:w-1/2 mb-12 md:mb-0 fade-in hero-content"
             style="animation-delay: 0.2s"
           >
             <h1
-              class="text-4xl md:text-6xl font-bold mb-4 text-white futuristic-font glow tracking-tight"
+              class="text-4xl md:text-6xl font-bold mb-4 text-white futuristic-font glow tracking-tight hero-title"
             >
               MD. UZZAL CHOWDHURY
             </h1>
             <h2
-              class="text-2xl md:text-3xl font-semibold mb-6 gradient-text futuristic-font tracking-wider"
+              class="text-2xl md:text-3xl font-semibold mb-6 gradient-text futuristic-font tracking-wider hero-subtitle"
+              id="typed-text"
             >
-              Research & Data Science Specialist
+              <!-- Typed.js will insert text here -->
             </h2>
             <p class="text-lg mb-8 text-slate-200 leading-relaxed">
               With nearly a decade of experience in research and evaluation
@@ -463,18 +821,15 @@
               Monitoring, Evaluation, Accountability, and Learning (MEAL) with a
               strong foundation in statistics and data analysis.
             </p>
-            <div class="flex flex-wrap gap-4">
+            <div class="flex flex-wrap gap-4 hero-buttons">
               <a
                 href="#contact"
                 class="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition futuristic-font hover:shadow-lg hover:-translate-y-1 transform transition-all duration-300"
               >
                 CONTACT ME
               </a>
-              <a
-                href="#research"
-                class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-blue-600 transition futuristic-font hover:shadow-lg hover:-translate-y-1 transform transition-all duration-300"
-              >
-                VIEW RESEARCH
+              <a href="#" class="download-btn" id="download-cv">
+                <i class="fas fa-download"></i> DOWNLOAD CV
               </a>
             </div>
           </div>
@@ -482,18 +837,13 @@
             class="md:w-1/2 flex justify-center fade-in"
             style="animation-delay: 0.4s"
           >
-            <div
-              class="relative floating hover:scale-105 transform transition-all duration-500"
-            >
-              <div
-                class="hexagon w-64 h-72 md:w-80 md:h-88 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center border-2 border-white/20 hover:border-blue-400/50 transition-all duration-500"
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
-                  alt="Professional portrait"
-                  class="hexagon w-[calc(100%-8px)] h-[calc(100%-8px)] object-cover"
-                />
-              </div>
+            <div class="profile-container floating">
+              <img
+                src="./assets/images/profile.jpeg"
+                alt="Professional portrait"
+                class="profile-photo"
+              />
+              <div class="profile-decoration"></div>
               <div
                 class="absolute -right-4 -bottom-4 glass-card p-4 rounded-lg shadow-lg pulse border border-blue-400/30"
               >
@@ -521,69 +871,76 @@
         style="animation-delay: 1s"
       ></div>
     </header>
-
     <!-- About Section -->
-    <section id="about" class="py-20 relative overflow-hidden">
+    <section id="about" class="py-20 relative overflow-hidden section-padding">
       <div
-        class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center opacity-5"
+        class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1629909613654-28e377c0b8e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-5"
       ></div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h2
-          class="text-4xl font-bold text-center mb-16 gradient-text futuristic-font tracking-wider"
+          class="text-4xl font-bold text-center mb-16 gradient-text futuristic-font tracking-wider section-title"
+          data-aos="fade-up"
         >
           PROFESSIONAL SUMMARY
         </h2>
-
         <div
           class="glass-card rounded-xl p-8 mb-12 fade-in hover-glow hover:border-glow"
+          data-aos="fade-up"
+          data-aos-delay="100"
         >
           <div class="md:flex items-center gap-8">
-            <div class="md:w-1/3 mb-6 md:mb-0">
+            <div class="md:w-1/3 mb-6 md:mb-0" data-aos="fade-right">
               <img
                 src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
                 alt="Data analysis"
                 class="w-full h-auto rounded-lg shadow-lg transform hover:scale-105 transition duration-500"
               />
             </div>
-            <div class="md:w-2/3">
-              <p class="mb-6 text-slate-200 leading-relaxed">
-                Holding a Master's in Statistics from the University of Dhaka, I
-                have developed expertise in research design, survey tools,
-                qualitative guideline development, data collection, analysis,
-                and reporting. With hands-on experience in over 25 mixed-method
-                research studies, I bring a strong track record in generating
-                high-quality evidence to inform program design, drive
-                implementation excellence, and shape policy decisions.
-              </p>
-              <p class="mb-6 text-slate-200 leading-relaxed">
-                Beyond research, I actively contribute to organizational
-                priorities including CSP, DEI, GESI, humanitarian response, and
-                staff well-being through cultural and sports
-                engagement—demonstrating both analytical depth and a
-                people-centered approach at SCI. His previous appointment before
-                joining at SCI was as a Senior Statistician at BRAC James P
-                Grant School of Public Health. I also worked as a Senior
-                Teaching Fellow for the Biostatistics course of the MPH program.
-                Previously, he also worked in the a2i program of the Prime
-                Minister's office in Bangladesh. He has bachelors and master's
-                degrees in Statistics, Biostatistics, and Informatics from the
-                University of Dhaka, Bangladesh.
-              </p>
-              <p class="text-slate-200 leading-relaxed">
-                His work interests include climate change, urban and rural
-                areas, marginalized communities such as brothel and Dalit
-                groups, sexual and reproductive health and rights, children's
-                and adolescents' health, index generation, and the application
-                of behavioral science for service simplification.
-              </p>
+            <div class="md:w-2/3" data-aos="fade-left">
+              <div class="truncate-text" id="about-text">
+                <p class="mb-6 text-slate-200 leading-relaxed">
+                  Holding a Master's in Statistics from the University of Dhaka,
+                  I have developed expertise in research design, survey tools,
+                  qualitative guideline development, data collection, analysis,
+                  and reporting. With hands-on experience in over 25
+                  mixed-method research studies, I bring a strong track record
+                  in generating high-quality evidence to inform program design,
+                  drive implementation excellence, and shape policy decisions.
+                </p>
+                <p class="mb-6 text-slate-200 leading-relaxed">
+                  Beyond research, I actively contribute to organizational
+                  priorities including CSP, DEI, GESI, humanitarian response,
+                  and staff well-being through cultural and sports
+                  engagement—demonstrating both analytical depth and a
+                  people-centered approach at SCI. His previous appointment
+                  before joining at SCI was as a Senior Statistician at BRAC
+                  James P Grant School of Public Health. I also worked as a
+                  Senior Teaching Fellow for the Biostatistics course of the MPH
+                  program. Previously, he also worked in the a2i program of the
+                  Prime Minister's office in Bangladesh. He has bachelors and
+                  master's degrees in Statistics, Biostatistics, and Informatics
+                  from the University of Dhaka, Bangladesh.
+                </p>
+                <p class="text-slate-200 leading-relaxed">
+                  His work interests include climate change, urban and rural
+                  areas, marginalized communities such as brothel and Dalit
+                  groups, sexual and reproductive health and rights, children's
+                  and adolescents' health, index generation, and the application
+                  of behavioral science for service simplification.
+                </p>
+              </div>
+              <button class="read-more-btn" id="about-read-more">
+                Read more <i class="fas fa-chevron-down"></i>
+              </button>
             </div>
           </div>
         </div>
-
         <div class="grid md:grid-cols-3 gap-8">
           <div
             class="glass-card p-6 rounded-xl fade-in hover-glow"
             style="animation-delay: 0.2s"
+            data-aos="fade-up"
+            data-aos-delay="200"
           >
             <div class="text-blue-400 mb-4">
               <div
@@ -604,10 +961,11 @@
               class="mt-4 h-1 w-20 bg-gradient-to-r from-blue-500 to-transparent rounded-full"
             ></div>
           </div>
-
           <div
             class="glass-card p-6 rounded-xl fade-in hover-glow"
             style="animation-delay: 0.4s"
+            data-aos="fade-up"
+            data-aos-delay="300"
           >
             <div class="text-purple-400 mb-4">
               <div
@@ -628,10 +986,11 @@
               class="mt-4 h-1 w-20 bg-gradient-to-r from-purple-500 to-transparent rounded-full"
             ></div>
           </div>
-
           <div
             class="glass-card p-6 rounded-xl fade-in hover-glow"
             style="animation-delay: 0.6s"
+            data-aos="fade-up"
+            data-aos-delay="400"
           >
             <div class="text-pink-400 mb-4">
               <div
@@ -654,288 +1013,250 @@
         </div>
       </div>
     </section>
-
-    <!-- Experience Section -->
+    <!-- Experience Section - Redesigned -->
     <section
       id="experience"
-      class="py-20 data-bg parallax-bg relative overflow-hidden"
+      class="py-20 data-bg parallax-bg relative overflow-hidden section-padding"
     >
       <div
         class="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900/30"
       ></div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h2
-          class="text-4xl font-bold text-center mb-16 gradient-text futuristic-font tracking-wider"
+          class="text-4xl font-bold text-center mb-16 gradient-text futuristic-font tracking-wider section-title"
+          data-aos="fade-up"
         >
           PROFESSIONAL EXPERIENCE
         </h2>
 
-        <div class="relative pl-12 timeline fade-in">
-          <!-- Experience 1 -->
-          <div class="relative mb-12 pl-8">
-            <div class="timeline-dot"></div>
-            <div class="glass-card p-6 rounded-xl hover-glow">
-              <div
-                class="flex flex-col md:flex-row justify-between items-start mb-2"
-              >
-                <h3 class="text-xl font-semibold text-white">
-                  Technical Specialist- Research & Analysis
-                </h3>
-                <span
-                  class="bg-blue-500/20 text-blue-400 text-sm font-medium px-3 py-1 rounded-full mt-2 md:mt-0"
-                  >2022 - 2024</span
-                >
+        <!-- Experience 1 - Redesigned -->
+        <div class="grid md:grid-cols-2 gap-8 mb-12" data-aos="fade-up">
+          <div class="exp-card glass-card p-8 rounded-xl relative">
+            <span class="exp-date bg-blue-500/20 text-blue-400"
+              >2022 - 2024</span
+            >
+            <h3 class="text-2xl font-bold mb-2 text-white">
+              Technical Specialist- Research & Analysis
+            </h3>
+            <span class="exp-org bg-purple-500/20 text-purple-400"
+              >Save the Children International (SCI)</span
+            >
+
+            <div class="w-full h-48 mb-6 rounded-lg overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="Save the Children"
+                class="w-full h-full object-cover transform hover:scale-110 transition duration-500"
+              />
+            </div>
+
+            <div class="truncate-text" id="exp1-text">
+              <div class="exp-highlight">
+                Led over 25 research studies contributing to evidence, learning
+                briefs, and reports
               </div>
-              <p class="text-purple-400 font-medium mb-2">
-                Save the Children International (SCI)
-              </p>
-              <div class="md:flex items-center gap-4">
-                <div class="md:w-1/3 mb-4 md:mb-0">
-                  <img
-                    src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                    alt="Save the Children"
-                    class="w-full h-auto rounded-lg transform hover:scale-105 transition duration-500"
-                  />
-                </div>
-                <div class="md:w-2/3">
-                  <p class="text-slate-300 leading-relaxed">
-                    I have been actively involved in mixed-method studies,
-                    enhancing my expertise in the research field. I have gained
-                    valuable experience in program development, implementation,
-                    and evaluation processes for internal research. My passion
-                    lies in generating high-quality evidence to support
-                    effective program implementation and influence policy
-                    decisions. I have led over 25 research studies, contributing
-                    to evidence generation, learning briefs, quarterly progress
-                    reports, annual report writing, proposal development,
-                    training facilitation, and dashboard design. Additionally, I
-                    support various organizational needs, including DEI and GESI
-                    initiatives, humanitarian efforts, and cultural and sports
-                    activities.
-                  </p>
-                </div>
+              <div class="exp-highlight">
+                Specialized in mixed-method research design and implementation
+              </div>
+              <div class="exp-highlight">
+                Developed monitoring frameworks and dashboards for program
+                evaluation
+              </div>
+              <div class="exp-highlight">
+                Contributed to organizational DEI, GESI initiatives and
+                humanitarian response
               </div>
             </div>
+            <button class="read-more-btn" id="exp1-read-more">
+              Read more <i class="fas fa-chevron-down"></i>
+            </button>
           </div>
 
-          <!-- Experience 2 -->
-          <div class="relative mb-12 pl-8">
-            <div class="timeline-dot"></div>
-            <div class="glass-card p-6 rounded-xl hover-glow">
-              <div
-                class="flex flex-col md:flex-row justify-between items-start mb-2"
-              >
-                <h3 class="text-xl font-semibold text-white">
-                  Senior Statistician
-                </h3>
-                <span
-                  class="bg-purple-500/20 text-purple-400 text-sm font-medium px-3 py-1 rounded-full mt-2 md:mt-0"
-                  >2018 - 2022</span
-                >
-              </div>
-              <p class="text-pink-400 font-medium mb-2">
-                BRAC James P Grant School of Public Health
-              </p>
-              <div class="md:flex items-center gap-4">
-                <div class="md:w-1/3 mb-4 md:mb-0">
-                  <img
-                    src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                    alt="BRAC University"
-                    class="w-full h-auto rounded-lg transform hover:scale-105 transition duration-500"
-                  />
-                </div>
-                <div class="md:w-2/3">
-                  <p class="text-slate-300 leading-relaxed">
-                    At BRAC JPGSPH, BRAC University, my primary responsibility
-                    lies in the Wellcome Trust project. This project focuses on
-                    identifying available secondary datasets and formulating
-                    policy scenarios to establish pathways toward creating
-                    equitable, healthy cities in various locations, namely
-                    Dhaka, Beijing, Vancouver, Tehran, Accra, and London.
-                    Additionally, I coordinated and executed a nationwide survey
-                    on Sexually Reproductive Health (SRH) among Persons with
-                    Disabilities (PWDs) in Bangladesh. This initiative relies on
-                    the Disability Detection Survey database as a valuable
-                    resource. The survey aims to gather insights into the
-                    sufferings, knowledge, perceptions, and rights of PWDs
-                    regarding SRH. Furthermore, I was responsible for organizing
-                    and creating a draft report for the BRAC baseline research.
-                    This research primarily aimed to assess the well-being of
-                    Ready-Made garment (RMG) workers by utilizing a one-stop
-                    service center. In parallel to these engagements, I also
-                    contribute as a teaching fellow (TF) for the Biostatistics
-                    course in the MPH programme at JPGSPH. My responsibilities
-                    in this capacity involve assisting and supporting students
-                    pursuing their MPH degree and facilitating the STATA lab
-                    session. To get better experience in programme development,
-                    implementation, and evaluation conducted by INGOs with
-                    better opportunities.
-                  </p>
-                </div>
-              </div>
+          <!-- Experience 2 - Redesigned -->
+          <div
+            class="exp-card glass-card p-8 rounded-xl relative"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <span class="exp-date bg-purple-500/20 text-purple-400"
+              >2018 - 2022</span
+            >
+            <h3 class="text-2xl font-bold mb-2 text-white">
+              Senior Statistician
+            </h3>
+            <span class="exp-org bg-pink-500/20 text-pink-400"
+              >BRAC James P Grant School of Public Health</span
+            >
+
+            <div class="w-full h-48 mb-6 rounded-lg overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="BRAC University"
+                class="w-full h-full object-cover transform hover:scale-110 transition duration-500"
+              />
             </div>
-          </div>
 
-          <!-- Experience 3 -->
-          <div class="relative mb-12 pl-8">
-            <div class="timeline-dot"></div>
-            <div class="glass-card p-6 rounded-xl hover-glow">
-              <div
-                class="flex flex-col md:flex-row justify-between items-start mb-2"
-              >
-                <h3 class="text-xl font-semibold text-white">
-                  Policy Assistant
-                </h3>
-                <span
-                  class="bg-blue-500/20 text-blue-400 text-sm font-medium px-3 py-1 rounded-full mt-2 md:mt-0"
-                  >2018</span
-                >
+            <div class="truncate-text" id="exp2-text">
+              <div class="exp-highlight">
+                Coordinated Wellcome Trust project on equitable, healthy cities
+                across 6 global locations
               </div>
-              <p class="text-purple-400 font-medium mb-2">
-                Access to information, Prime Minister's Office, Bangladesh
-              </p>
-              <div class="md:flex items-center gap-4">
-                <div class="md:w-1/3 mb-4 md:mb-0">
-                  <img
-                    src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                    alt="Policy work"
-                    class="w-full h-auto rounded-lg transform hover:scale-105 transition duration-500"
-                  />
-                </div>
-                <div class="md:w-2/3">
-                  <p class="text-slate-300 leading-relaxed">
-                    As a Policy Assistant in a2i, my primary responsibility
-                    involved assisting with a2i's Skill for Employment team.
-                    This assistance aimed to facilitate the implementation of a
-                    skills development program across 100 economic zones in
-                    Bangladesh. Furthermore, I contributed to skills development
-                    initiatives benefiting 350,000 beneficiaries of the Ekti
-                    Bari Ekti Khamar (EBEK) projects. Additionally, I played a
-                    key role in district branding initiatives within the tourism
-                    sector, covering 37 upazilas. In addition to these
-                    responsibilities, I coordinated an apprenticeship program
-                    targeting unemployed youth in the formal sector. This
-                    involved organizing a nationwide Training of Trainers (ToT)
-                    workshop. Moreover, I drafted multiple Memoranda of
-                    Understanding (MoUs) between government and private
-                    organizations. Furthermore, I had the opportunity to
-                    contribute to the design of the interface for the Skills
-                    Portal of Bangladesh, accessible at www.skills.gov.bd.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Experience 4 -->
-          <div class="relative pl-8">
-            <div class="timeline-dot"></div>
-            <div class="glass-card p-6 rounded-xl hover-glow">
-              <div
-                class="flex flex-col md:flex-row justify-between items-start mb-2"
-              >
-                <h3 class="text-xl font-semibold text-white">
-                  Research Assistant
-                </h3>
-                <span
-                  class="bg-purple-500/20 text-purple-400 text-sm font-medium px-3 py-1 rounded-full mt-2 md:mt-0"
-                  >2015 - 2018</span
-                >
-              </div>
-              <p class="text-pink-400 font-medium mb-2">
-                Access to information, UNDP & Prime Minister's Office,
+              <div class="exp-highlight">
+                Led nationwide survey on SRH among Persons with Disabilities in
                 Bangladesh
-              </p>
-              <div class="md:flex items-center gap-4">
-                <div class="md:w-1/3 mb-4 md:mb-0">
-                  <img
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                    alt="Research work"
-                    class="w-full h-auto rounded-lg transform hover:scale-105 transition duration-500"
-                  />
-                </div>
-                <div class="md:w-2/3">
-                  <p class="text-slate-300 leading-relaxed">
-                    As a Research Assistant in a2i, my primary responsibility
-                    was to analyze survey data of various service simplification
-                    processes (SPS). Conducted monitoring and evaluation
-                    activities against the results and set measurable indicators
-                    for each team of a2i based on the annual working plan in
-                    line with the M&E Framework. Also assisted in drafting the
-                    Prime Minister's Office's reporting of different time
-                    periods (quarterly and year-end progress) and for the other
-                    donors (UNDP & USAID) on time and according to their
-                    requirements. Assisted in designing the interface of the
-                    Open Government Data (OGD) Portal of Bangladesh and the data
-                    management process of this portal, www.data.gov.bd, and also
-                    assisted in designing the citizen-centric mutation system in
-                    www.land.gov.bd by applying RCT in 46 Upazilas with the help
-                    of BIT.
-                  </p>
-                </div>
+              </div>
+              <div class="exp-highlight">
+                Conducted BRAC baseline research on RMG worker well-being
+              </div>
+              <div class="exp-highlight">
+                Served as Teaching Fellow for Biostatistics in MPH program
               </div>
             </div>
+            <button class="read-more-btn" id="exp2-read-more">
+              Read more <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Experience 3 & 4 - Redesigned -->
+        <div
+          class="grid md:grid-cols-2 gap-8"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <div class="exp-card glass-card p-8 rounded-xl relative">
+            <span class="exp-date bg-blue-500/20 text-blue-400">2018</span>
+            <h3 class="text-2xl font-bold mb-2 text-white">Policy Assistant</h3>
+            <span class="exp-org bg-purple-500/20 text-purple-400"
+              >Access to information, Prime Minister's Office</span
+            >
+
+            <div class="w-full h-48 mb-6 rounded-lg overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="Policy work"
+                class="w-full h-full object-cover transform hover:scale-110 transition duration-500"
+              />
+            </div>
+
+            <div class="truncate-text" id="exp3-text">
+              <div class="exp-highlight">
+                Assisted skills development programs across 100 economic zones
+              </div>
+              <div class="exp-highlight">
+                Coordinated apprenticeship programs for unemployed youth
+              </div>
+              <div class="exp-highlight">
+                Drafted MoUs between government and private organizations
+              </div>
+              <div class="exp-highlight">
+                Contributed to design of Bangladesh Skills Portal interface
+              </div>
+            </div>
+            <button class="read-more-btn" id="exp3-read-more">
+              Read more <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+
+          <div
+            class="exp-card glass-card p-8 rounded-xl relative"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <span class="exp-date bg-purple-500/20 text-purple-400"
+              >2015 - 2018</span
+            >
+            <h3 class="text-2xl font-bold mb-2 text-white">
+              Research Assistant
+            </h3>
+            <span class="exp-org bg-pink-500/20 text-pink-400"
+              >Access to information, UNDP & Prime Minister's Office</span
+            >
+
+            <div class="w-full h-48 mb-6 rounded-lg overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="Research work"
+                class="w-full h-full object-cover transform hover:scale-110 transition duration-500"
+              />
+            </div>
+
+            <div class="truncate-text" id="exp4-text">
+              <div class="exp-highlight">
+                Analyzed survey data for service simplification processes
+              </div>
+              <div class="exp-highlight">
+                Conducted monitoring and evaluation against measurable
+                indicators
+              </div>
+              <div class="exp-highlight">
+                Assisted in designing Open Government Data Portal interface
+              </div>
+              <div class="exp-highlight">
+                Contributed to citizen-centric mutation system using RCT
+              </div>
+            </div>
+            <button class="read-more-btn" id="exp4-read-more">
+              Read more <i class="fas fa-chevron-down"></i>
+            </button>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Education Section -->
-    <section id="education" class="py-20 relative overflow-hidden">
+    <!-- Education Section with Stepper -->
+    <section
+      id="education"
+      class="py-20 relative overflow-hidden section-padding"
+    >
       <div
         class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center opacity-10"
       ></div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h2
-          class="text-4xl font-bold text-center mb-16 gradient-text futuristic-font tracking-wider"
+          class="text-4xl font-bold text-center mb-16 gradient-text futuristic-font tracking-wider section-title"
+          data-aos="fade-up"
         >
           EDUCATION
         </h2>
 
-        <div class="grid md:grid-cols-2 gap-8 fade-in">
-          <div class="glass-card p-6 rounded-xl hover-glow">
-            <div class="flex items-start">
-              <div
-                class="bg-blue-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
-              >
-                <i class="fas fa-graduation-cap text-blue-400 text-2xl"></i>
-              </div>
-              <div>
-                <h3 class="text-xl font-semibold mb-1 text-white">
-                  Master of Science (M.Sc.) in Statistics
-                </h3>
-                <p class="text-blue-400 font-medium mb-2">
-                  University of Dhaka
-                </p>
-                <p class="text-slate-300">2014</p>
-                <p class="text-slate-300 mt-2">
-                  Specialized in Biostatistics and Informatics with research
-                  focus on applied statistical methods for public health.
-                </p>
-              </div>
+        <div class="stepper" data-aos="fade-up">
+          <div class="stepper-item">
+            <div class="glass-card p-6 rounded-xl hover-glow mb-8">
+              <h3 class="text-xl font-semibold mb-1 text-white">
+                Master of Science (M.Sc.) in Statistics
+              </h3>
+              <p class="text-blue-400 font-medium mb-2">University of Dhaka</p>
+              <p class="text-slate-300">2014</p>
+              <p class="text-slate-300 mt-2">
+                Specialized in Biostatistics and Informatics with research focus
+                on applied statistical methods for public health.
+              </p>
+              <img
+                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="University of Dhaka"
+                class="w-full h-48 object-cover rounded-lg mt-4"
+              />
             </div>
           </div>
 
-          <div class="glass-card p-6 rounded-xl hover-glow">
-            <div class="flex items-start">
-              <div
-                class="bg-purple-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
-              >
-                <i class="fas fa-university text-purple-400 text-2xl"></i>
-              </div>
-              <div>
-                <h3 class="text-xl font-semibold mb-1 text-white">
-                  Bachelor of Science (B.Sc.) in Statistics
-                </h3>
-                <p class="text-purple-400 font-medium mb-2">
-                  University of Dhaka
-                </p>
-                <p class="text-slate-300">2013</p>
-                <p class="text-slate-300 mt-2">
-                  Focused on statistical theory, probability, computational
-                  statistics, and data analysis techniques.
-                </p>
-              </div>
+          <div class="stepper-item">
+            <div class="glass-card p-6 rounded-xl hover-glow">
+              <h3 class="text-xl font-semibold mb-1 text-white">
+                Bachelor of Science (B.Sc.) in Statistics
+              </h3>
+              <p class="text-purple-400 font-medium mb-2">
+                University of Dhaka
+              </p>
+              <p class="text-slate-300">2013</p>
+              <p class="text-slate-300 mt-2">
+                Focused on statistical theory, probability, computational
+                statistics, and data analysis techniques.
+              </p>
+              <img
+                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="University campus"
+                class="w-full h-48 object-cover rounded-lg mt-4"
+              />
             </div>
           </div>
         </div>
@@ -943,11 +1264,16 @@
         <!-- Teaching Activities -->
         <h3
           class="text-3xl font-semibold mt-16 mb-8 text-center gradient-text futuristic-font tracking-wider"
+          data-aos="fade-up"
         >
           TEACHING ACTIVITIES
         </h3>
         <div class="grid md:grid-cols-2 gap-6 fade-in">
-          <div class="glass-card p-6 rounded-xl grid-item">
+          <div
+            class="glass-card p-6 rounded-xl grid-item"
+            data-aos="fade-in"
+            data-aos-delay="100"
+          >
             <div class="flex items-start">
               <div
                 class="bg-blue-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
@@ -966,8 +1292,11 @@
               </div>
             </div>
           </div>
-
-          <div class="glass-card p-6 rounded-xl grid-item">
+          <div
+            class="glass-card p-6 rounded-xl grid-item"
+            data-aos="fade-in"
+            data-aos-delay="200"
+          >
             <div class="flex items-start">
               <div
                 class="bg-purple-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
@@ -986,8 +1315,11 @@
               </div>
             </div>
           </div>
-
-          <div class="glass-card p-6 rounded-xl grid-item">
+          <div
+            class="glass-card p-6 rounded-xl grid-item"
+            data-aos="fade-in"
+            data-aos-delay="300"
+          >
             <div class="flex items-start">
               <div
                 class="bg-blue-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
@@ -1005,8 +1337,11 @@
               </div>
             </div>
           </div>
-
-          <div class="glass-card p-6 rounded-xl grid-item">
+          <div
+            class="glass-card p-6 rounded-xl grid-item"
+            data-aos="fade-in"
+            data-aos-delay="400"
+          >
             <div class="flex items-start">
               <div
                 class="bg-purple-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
@@ -1025,15 +1360,19 @@
             </div>
           </div>
         </div>
-
         <!-- Training Facilitation -->
         <h3
           class="text-3xl font-semibold mt-16 mb-8 text-center gradient-text futuristic-font tracking-wider"
+          data-aos="fade-up"
         >
           TRAINING FACILITATION
         </h3>
         <div class="grid md:grid-cols-2 gap-6 fade-in">
-          <div class="glass-card p-6 rounded-xl grid-item">
+          <div
+            class="glass-card p-6 rounded-xl grid-item"
+            data-aos="fade-in"
+            data-aos-delay="100"
+          >
             <div class="flex items-start">
               <div
                 class="bg-blue-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
@@ -1049,8 +1388,11 @@
               </div>
             </div>
           </div>
-
-          <div class="glass-card p-6 rounded-xl grid-item">
+          <div
+            class="glass-card p-6 rounded-xl grid-item"
+            data-aos="fade-in"
+            data-aos-delay="200"
+          >
             <div class="flex items-start">
               <div
                 class="bg-purple-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
@@ -1066,8 +1408,11 @@
               </div>
             </div>
           </div>
-
-          <div class="glass-card p-6 rounded-xl grid-item">
+          <div
+            class="glass-card p-6 rounded-xl grid-item"
+            data-aos="fade-in"
+            data-aos-delay="300"
+          >
             <div class="flex items-start">
               <div
                 class="bg-blue-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
@@ -1083,8 +1428,11 @@
               </div>
             </div>
           </div>
-
-          <div class="glass-card p-6 rounded-xl grid-item">
+          <div
+            class="glass-card p-6 rounded-xl grid-item"
+            data-aos="fade-in"
+            data-aos-delay="400"
+          >
             <div class="flex items-start">
               <div
                 class="bg-purple-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
@@ -1103,15 +1451,19 @@
             </div>
           </div>
         </div>
-
         <!-- Learning & Training Received -->
         <h3
           class="text-3xl font-semibold mt-16 mb-8 text-center gradient-text futuristic-font tracking-wider"
+          data-aos="fade-up"
         >
           LEARNING & TRAINING RECEIVED
         </h3>
         <div class="grid md:grid-cols-2 gap-6 fade-in">
-          <div class="glass-card p-6 rounded-xl grid-item">
+          <div
+            class="glass-card p-6 rounded-xl grid-item"
+            data-aos="fade-in"
+            data-aos-delay="100"
+          >
             <div class="flex items-start">
               <div
                 class="bg-blue-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
@@ -1130,8 +1482,11 @@
               </div>
             </div>
           </div>
-
-          <div class="glass-card p-6 rounded-xl grid-item">
+          <div
+            class="glass-card p-6 rounded-xl grid-item"
+            data-aos="fade-in"
+            data-aos-delay="200"
+          >
             <div class="flex items-start">
               <div
                 class="bg-purple-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
@@ -1149,8 +1504,11 @@
               </div>
             </div>
           </div>
-
-          <div class="glass-card p-6 rounded-xl grid-item">
+          <div
+            class="glass-card p-6 rounded-xl grid-item"
+            data-aos="fade-in"
+            data-aos-delay="300"
+          >
             <div class="flex items-start">
               <div
                 class="bg-blue-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
@@ -1166,8 +1524,11 @@
               </div>
             </div>
           </div>
-
-          <div class="glass-card p-6 rounded-xl grid-item">
+          <div
+            class="glass-card p-6 rounded-xl grid-item"
+            data-aos="fade-in"
+            data-aos-delay="400"
+          >
             <div class="flex items-start">
               <div
                 class="bg-purple-500/20 p-3 rounded-lg mr-4 flex items-center justify-center"
@@ -1188,29 +1549,122 @@
         </div>
       </div>
     </section>
+    <!-- Testimonial Section -->
+    <section
+      id="testimonials"
+      class="py-20 relative overflow-hidden section-padding"
+    >
+      <div
+        class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center opacity-10"
+      ></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <h2
+          class="text-4xl font-bold text-center mb-16 gradient-text futuristic-font tracking-wider section-title"
+          data-aos="fade-up"
+        >
+          TESTIMONIALS
+        </h2>
 
+        <div class="testimonial-slider" data-aos="fade-up">
+          <div class="testimonial-card">
+            <div class="testimonial-avatar">
+              <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="Reefat Bin Sattar"
+              />
+            </div>
+            <p class="testimonial-quote">
+              Uzzal's expertise in research and data analysis has been
+              invaluable to our team. His ability to translate complex data into
+              actionable insights has directly contributed to the success of our
+              programs.
+            </p>
+            <h4 class="testimonial-name">Reefat Bin Sattar</h4>
+            <p class="testimonial-title">
+              Director - PDQ, Save the Children International
+            </p>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-avatar">
+              <img
+                src="https://randomuser.me/api/portraits/men/44.jpg"
+                alt="Md.Tanvir Hasan"
+              />
+            </div>
+            <p class="testimonial-quote">
+              As a colleague at BRAC JPGSPH, I've witnessed Uzzal's exceptional
+              skills in statistical analysis and research methodology. His
+              dedication to rigorous research is truly commendable.
+            </p>
+            <h4 class="testimonial-name">Md.Tanvir Hasan, PhD</h4>
+            <p class="testimonial-title">
+              Associate Professor, BRAC University
+            </p>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-avatar">
+              <img
+                src="https://randomuser.me/api/portraits/women/65.jpg"
+                alt="Sarah Johnson"
+              />
+            </div>
+            <p class="testimonial-quote">
+              Working with Uzzal on our research project was a pleasure. His
+              attention to detail and deep understanding of MEAL frameworks
+              ensured our study produced high-quality results.
+            </p>
+            <h4 class="testimonial-name">Sarah Johnson</h4>
+            <p class="testimonial-title">
+              Research Director, International NGO
+            </p>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-avatar">
+              <img
+                src="https://randomuser.me/api/portraits/men/22.jpg"
+                alt="Dr. Ahmed Rahman"
+              />
+            </div>
+            <p class="testimonial-quote">
+              Uzzal's teaching of Biostatistics was exceptional. He has a unique
+              ability to make complex statistical concepts accessible to
+              students from diverse backgrounds.
+            </p>
+            <h4 class="testimonial-name">Dr. Ahmed Rahman</h4>
+            <p class="testimonial-title">MPH Student, BRAC University</p>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Research Section -->
-    <section id="research" class="py-20 relative overflow-hidden">
+    <section
+      id="research"
+      class="py-20 relative overflow-hidden section-padding"
+    >
       <div
         class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80')] bg-cover bg-center opacity-10"
       ></div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h2
-          class="text-4xl font-bold text-center mb-16 gradient-text futuristic-font tracking-wider"
+          class="text-4xl font-bold text-center mb-16 gradient-text futuristic-font tracking-wider section-title"
+          data-aos="fade-up"
         >
           RESEARCH EXPEDITIONS
         </h2>
-
         <div class="grid md:grid-cols-2 gap-8 mb-12">
           <!-- Principal Investigator Projects -->
-          <div class="fade-in">
+          <div class="fade-in" data-aos="fade-up" data-aos-delay="100">
             <h3
               class="text-xl font-semibold mb-6 text-center bg-blue-500/20 text-blue-400 py-3 px-6 rounded-lg futuristic-font tracking-wider"
             >
               PRINCIPAL INVESTIGATOR
             </h3>
             <div class="grid md:grid-cols-2 gap-4">
-              <div class="glass-card p-4 rounded-lg grid-item">
+              <div
+                class="glass-card p-4 rounded-lg grid-item"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
                 <p class="font-medium text-blue-400">2025</p>
                 <h3 class="text-lg font-semibold mb-2 text-white">
                   Informal Settlements Survey
@@ -1218,9 +1672,17 @@
                 <p class="text-slate-300">
                   DNCC, DSCC, and Chattogram City Corporations
                 </p>
+                <img
+                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                  alt="Informal settlements"
+                  class="w-full h-32 object-cover rounded-lg mt-3"
+                />
               </div>
-
-              <div class="glass-card p-4 rounded-lg grid-item">
+              <div
+                class="glass-card p-4 rounded-lg grid-item"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
                 <p class="font-medium text-blue-400">2024</p>
                 <h3 class="text-lg font-semibold mb-2 text-white">
                   BHA Baseline Study
@@ -1229,9 +1691,17 @@
                   Strengthening local leadership to promote resilience in Sylhet
                   region
                 </p>
+                <img
+                  src="https://images.unsplash.com/photo-1470004914212-05527e49370b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                  alt="Resilience study"
+                  class="w-full h-32 object-cover rounded-lg mt-3"
+                />
               </div>
-
-              <div class="glass-card p-4 rounded-lg grid-item">
+              <div
+                class="glass-card p-4 rounded-lg grid-item"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
                 <p class="font-medium text-blue-400">2024</p>
                 <h3 class="text-lg font-semibold mb-2 text-white">
                   Skills Training Impact Study
@@ -1239,9 +1709,17 @@
                 <p class="text-slate-300">
                   Livelihoods of adolescents in Cox's Bazar host community
                 </p>
+                <img
+                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                  alt="Skills training"
+                  class="w-full h-32 object-cover rounded-lg mt-3"
+                />
               </div>
-
-              <div class="glass-card p-4 rounded-lg grid-item">
+              <div
+                class="glass-card p-4 rounded-lg grid-item"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
                 <p class="font-medium text-blue-400">2024</p>
                 <h3 class="text-lg font-semibold mb-2 text-white">
                   Mamota Project Baseline
@@ -1249,19 +1727,27 @@
                 <p class="text-slate-300">
                   Maternal and child health initiative evaluation
                 </p>
+                <img
+                  src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                  alt="Maternal health"
+                  class="w-full h-32 object-cover rounded-lg mt-3"
+                />
               </div>
             </div>
           </div>
-
           <!-- Co-Investigator Projects -->
-          <div class="fade-in" style="animation-delay: 0.2s">
+          <div class="fade-in" data-aos="fade-up" data-aos-delay="600">
             <h3
               class="text-xl font-semibold mb-6 text-center bg-purple-500/20 text-purple-400 py-3 px-6 rounded-lg futuristic-font tracking-wider"
             >
               CO-INVESTIGATOR
             </h3>
             <div class="grid md:grid-cols-2 gap-4">
-              <div class="glass-card p-4 rounded-lg grid-item">
+              <div
+                class="glass-card p-4 rounded-lg grid-item"
+                data-aos="fade-up"
+                data-aos-delay="700"
+              >
                 <p class="font-medium text-purple-400">2022</p>
                 <h3 class="text-lg font-semibold mb-2 text-white">
                   Multisectoral Needs Assessment
@@ -1269,9 +1755,17 @@
                 <p class="text-slate-300">
                   Cox's Bazar, Bangladesh (Save the Children internal study)
                 </p>
+                <img
+                  src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                  alt="Needs assessment"
+                  class="w-full h-32 object-cover rounded-lg mt-3"
+                />
               </div>
-
-              <div class="glass-card p-4 rounded-lg grid-item">
+              <div
+                class="glass-card p-4 rounded-lg grid-item"
+                data-aos="fade-up"
+                data-aos-delay="800"
+              >
                 <p class="font-medium text-purple-400">2022</p>
                 <h3 class="text-lg font-semibold mb-2 text-white">
                   Hypertension and Obesity Prevalence
@@ -1279,9 +1773,17 @@
                 <p class="text-slate-300">
                   National health assessment (Save the Children internal study)
                 </p>
+                <img
+                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                  alt="Health assessment"
+                  class="w-full h-32 object-cover rounded-lg mt-3"
+                />
               </div>
-
-              <div class="glass-card p-4 rounded-lg grid-item">
+              <div
+                class="glass-card p-4 rounded-lg grid-item"
+                data-aos="fade-up"
+                data-aos-delay="900"
+              >
                 <p class="font-medium text-purple-400">2022</p>
                 <h3 class="text-lg font-semibold mb-2 text-white">
                   DANIDA SPA Baseline
@@ -1290,9 +1792,17 @@
                   Integrated education and child protection services for
                   Rohingya refugees
                 </p>
+                <img
+                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                  alt="Child protection"
+                  class="w-full h-32 object-cover rounded-lg mt-3"
+                />
               </div>
-
-              <div class="glass-card p-4 rounded-lg grid-item">
+              <div
+                class="glass-card p-4 rounded-lg grid-item"
+                data-aos="fade-up"
+                data-aos-delay="1000"
+              >
                 <p class="font-medium text-purple-400">2022</p>
                 <h3 class="text-lg font-semibold mb-2 text-white">
                   COVID-19 Education Impact
@@ -1300,19 +1810,28 @@
                 <p class="text-slate-300">
                   Children's education and women's livelihoods in urban slums
                 </p>
+                <img
+                  src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                  alt="Education impact"
+                  class="w-full h-32 object-cover rounded-lg mt-3"
+                />
               </div>
             </div>
           </div>
         </div>
-
         <!-- Research Grants -->
         <h3
           class="text-3xl font-semibold mb-8 text-center gradient-text futuristic-font tracking-wider"
+          data-aos="fade-up"
         >
           RESEARCH/PROGRAM GRANTS
         </h3>
         <div class="grid md:grid-cols-2 gap-6 fade-in">
-          <div class="glass-card p-6 rounded-lg grid-item">
+          <div
+            class="glass-card p-6 rounded-lg grid-item"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <p class="font-medium text-blue-400">2023</p>
             <h3 class="text-xl font-semibold mb-2 text-white">
               Child Climate Resilience and Forced Displacement
@@ -1322,9 +1841,17 @@
               (USD 20,725)
             </p>
             <p class="text-blue-400">Funded by MDI, SCI</p>
+            <img
+              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80"
+              alt="Climate resilience"
+              class="w-full h-40 object-cover rounded-lg mt-4"
+            />
           </div>
-
-          <div class="glass-card p-6 rounded-lg grid-item">
+          <div
+            class="glass-card p-6 rounded-lg grid-item"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <p class="font-medium text-purple-400">2022</p>
             <h3 class="text-xl font-semibold mb-2 text-white">
               Primary School Dropout Issue
@@ -1333,18 +1860,34 @@
               Baseline Study amid COVID-19 Pandemic (USD 48,000)
             </p>
             <p class="text-purple-400">Funded by BRAC</p>
+            <img
+              src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80"
+              alt="School dropout"
+              class="w-full h-40 object-cover rounded-lg mt-4"
+            />
           </div>
-
-          <div class="glass-card p-6 rounded-lg grid-item">
+          <div
+            class="glass-card p-6 rounded-lg grid-item"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             <p class="font-medium text-blue-400">2020</p>
             <h3 class="text-xl font-semibold mb-2 text-white">
               SRHR among WGWDs facing violence
             </h3>
             <p class="text-slate-300 mb-4">Baseline study (USD 15,000)</p>
             <p class="text-blue-400">Funded by ARROW</p>
+            <img
+              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80"
+              alt="SRHR"
+              class="w-full h-40 object-cover rounded-lg mt-4"
+            />
           </div>
-
-          <div class="glass-card p-6 rounded-lg grid-item">
+          <div
+            class="glass-card p-6 rounded-lg grid-item"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
             <p class="font-medium text-purple-400">2019-2020</p>
             <h3 class="text-xl font-semibold mb-2 text-white">
               Cross-border Trafficking Networks
@@ -1354,25 +1897,36 @@
               98,170)
             </p>
             <p class="text-purple-400">Funded by BRAC</p>
+            <img
+              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80"
+              alt="Trafficking research"
+              class="w-full h-40 object-cover rounded-lg mt-4"
+            />
           </div>
         </div>
       </div>
     </section>
-
     <!-- Publications Section -->
-    <section id="publications" class="py-20 relative overflow-hidden">
+    <section
+      id="publications"
+      class="py-20 relative overflow-hidden section-padding"
+    >
       <div
         class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80')] bg-cover bg-center opacity-10"
       ></div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h2
-          class="text-4xl font-bold text-center mb-16 gradient-text futuristic-font tracking-wider"
+          class="text-4xl font-bold text-center mb-16 gradient-text futuristic-font tracking-wider section-title"
+          data-aos="fade-up"
         >
           PUBLICATIONS
         </h2>
-
         <div class="grid md:grid-cols-2 gap-6 fade-in">
-          <div class="glass-card p-6 rounded-lg grid-item">
+          <div
+            class="glass-card p-6 rounded-lg grid-item"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <p class="font-medium text-blue-400">
               Rahman, S, Haque, S.M, Chowdhury, M.U,* et. al –(2024)
             </p>
@@ -1380,15 +1934,23 @@
               Bangladesh - Eastern flood needs assessment report
             </h3>
             <p class="text-slate-300 mb-4">September 2024</p>
+            <img
+              src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80"
+              alt="Flood assessment"
+              class="w-full h-40 object-cover rounded-lg mb-4"
+            />
             <a
               href="https://reliefweb.int/report/bangladesh/bangladesh-eastern-flood-needs-assessment-report-september-2024"
               class="text-blue-400 hover:text-blue-300 underline"
               target="_blank"
-              >View Publication</a
-            >
+              >View Publication <i class="fas fa-external-link-alt ml-1"></i
+            ></a>
           </div>
-
-          <div class="glass-card p-6 rounded-lg grid-item">
+          <div
+            class="glass-card p-6 rounded-lg grid-item"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <p class="font-medium text-purple-400">
               Lim, I. E., Mahmud, I., Chowdhury, M. U.,* Kaiser, A., Bonny, F.
               A., Akanbonga, S., & Hasan, M. T. (2023)
@@ -1400,15 +1962,23 @@
               Assessing the Status and Determinants of the Literacy–Numeracy,
               Physical, Social–Emotional, and Learning Domains
             </p>
+            <img
+              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80"
+              alt="ECD in Ghana"
+              class="w-full h-40 object-cover rounded-lg mb-4"
+            />
             <a
               href="https://doi.org/10.1007/S13158-023-00349-Y"
               class="text-purple-400 hover:text-purple-300 underline"
               target="_blank"
-              >View Publication</a
-            >
+              >View Publication <i class="fas fa-external-link-alt ml-1"></i
+            ></a>
           </div>
-
-          <div class="glass-card p-6 rounded-lg grid-item">
+          <div
+            class="glass-card p-6 rounded-lg grid-item"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             <p class="font-medium text-blue-400">
               Akanbonga, S., Hasan, T., Chowdhury, MU.,* Kaiser, A., Akter
               Bonny, F., Lim, I. E., & Mahmud, I. (2023)
@@ -1419,15 +1989,23 @@
             <p class="text-slate-300 mb-4">
               Findings from Ghana Multiple Indicator Cluster Survey, 2017–2018
             </p>
+            <img
+              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80"
+              alt="Child feeding"
+              class="w-full h-40 object-cover rounded-lg mb-4"
+            />
             <a
               href="https://doi.org/10.1371/JOURNAL.PONE.0286055"
               class="text-blue-400 hover:text-blue-300 underline"
               target="_blank"
-              >View Publication</a
-            >
+              >View Publication <i class="fas fa-external-link-alt ml-1"></i
+            ></a>
           </div>
-
-          <div class="glass-card p-6 rounded-lg grid-item">
+          <div
+            class="glass-card p-6 rounded-lg grid-item"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
             <p class="font-medium text-purple-400">
               Urme SA, Radia MA, Alam R, Chowdhury MU*, Hasan S, Ahmed S, Sara
               HH, Islam MS, Jerin DT, Hema PS, Rahman M, Islam AKM, Hasan MT,
@@ -1439,31 +2017,39 @@
             <p class="text-slate-300 mb-4">
               Addressing urban pollution and health hazards
             </p>
+            <img
+              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80"
+              alt="Waste management"
+              class="w-full h-40 object-cover rounded-lg mb-4"
+            />
             <a
               href="https://doi.org/10.5334/bc.108"
               class="text-purple-400 hover:text-purple-300 underline"
               target="_blank"
-              >View Publication</a
-            >
+              >View Publication <i class="fas fa-external-link-alt ml-1"></i
+            ></a>
           </div>
         </div>
       </div>
     </section>
-
     <!-- Skills Section -->
-    <section id="skills" class="py-20 relative overflow-hidden">
+    <section id="skills" class="py-20 relative overflow-hidden section-padding">
       <div
         class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80')] bg-cover bg-center opacity-10"
       ></div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h2
-          class="text-4xl font-bold text-center mb-16 gradient-text futuristic-font tracking-wider"
+          class="text-4xl font-bold text-center mb-16 gradient-text futuristic-font tracking-wider section-title"
+          data-aos="fade-up"
         >
           TECHNICAL EXPERTISE
         </h2>
-
         <div class="grid md:grid-cols-3 gap-6 fade-in">
-          <div class="glass-card p-6 rounded-xl hover-glow">
+          <div
+            class="glass-card p-6 rounded-xl hover-glow"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <div class="skill-icon bg-blue-500/20 hover:bg-blue-500/30">
               <img
                 src="https://cdn-icons-png.flaticon.com/512/2906/2906274.png"
@@ -1515,10 +2101,10 @@
               >
             </div>
           </div>
-
           <div
             class="glass-card p-6 rounded-xl hover-glow"
-            style="animation-delay: 0.2s"
+            data-aos="fade-up"
+            data-aos-delay="200"
           >
             <div class="skill-icon bg-purple-500/20 hover:bg-purple-500/30">
               <img
@@ -1555,10 +2141,10 @@
               >
             </div>
           </div>
-
           <div
             class="glass-card p-6 rounded-xl hover-glow"
-            style="animation-delay: 0.4s"
+            data-aos="fade-up"
+            data-aos-delay="300"
           >
             <div class="skill-icon bg-blue-500/20 hover:bg-blue-500/30">
               <img
@@ -1598,24 +2184,27 @@
         </div>
       </div>
     </section>
-
     <!-- Contact Section -->
     <section
       id="contact"
-      class="py-20 tech-bg parallax-bg relative overflow-hidden"
+      class="py-20 tech-bg parallax-bg relative overflow-hidden section-padding"
     >
       <div
         class="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900/30"
       ></div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h2
-          class="text-4xl font-bold text-center mb-16 gradient-text futuristic-font tracking-wider"
+          class="text-4xl font-bold text-center mb-16 gradient-text futuristic-font tracking-wider section-title"
+          data-aos="fade-up"
         >
           CONTACT & REFERENCES
         </h2>
-
         <div class="grid md:grid-cols-2 gap-8 fade-in">
-          <div class="glass-card p-6 rounded-xl hover-glow">
+          <div
+            class="glass-card p-6 rounded-xl hover-glow"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <h3
               class="text-xl font-semibold mb-4 text-blue-400 futuristic-font"
             >
@@ -1645,7 +2234,7 @@
               </div>
               <div class="flex items-start">
                 <div class="bg-blue-500/20 p-2 rounded-lg mr-4">
-                  <i class="fab fa-skype text-blue-400"></i>
+                  <i class="fa-brands fa-skype text-blue-400"></i>
                 </div>
                 <div>
                   <p class="font-medium text-white">Skype</p>
@@ -1661,10 +2250,10 @@
               />
             </div>
           </div>
-
           <div
             class="glass-card p-6 rounded-xl hover-glow"
-            style="animation-delay: 0.2s"
+            data-aos="fade-up"
+            data-aos-delay="200"
           >
             <h3
               class="text-xl font-semibold mb-4 text-purple-400 futuristic-font"
@@ -1709,7 +2298,6 @@
         </div>
       </div>
     </section>
-
     <!-- Footer -->
     <footer class="py-12 border-t border-slate-700/30 relative overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -1728,25 +2316,25 @@
           <div class="flex space-x-4">
             <a
               href="mailto:uzzal77sbi@gmail.com"
-              class="bg-blue-500/20 text-blue-400 p-3 rounded-full hover:bg-blue-500/30 transition hover:-translate-y-1 hover:shadow-lg"
+              class="bg-blue-500/20 text-blue-400 size-12 flex justify-center items-center rounded-full hover:bg-blue-500/30 transition hover:-translate-y-1 hover:shadow-lg"
             >
               <i class="fas fa-envelope"></i>
             </a>
             <a
               href="tel:+8801791930932"
-              class="bg-purple-500/20 text-purple-400 p-3 rounded-full hover:bg-purple-500/30 transition hover:-translate-y-1 hover:shadow-lg"
+              class="bg-purple-500/20 text-purple-400 size-12 flex justify-center items-center rounded-full hover:bg-purple-500/30 transition hover:-translate-y-1 hover:shadow-lg"
             >
               <i class="fas fa-phone"></i>
             </a>
             <a
               href="skype:uzzal77sbi@hotmail.com"
-              class="bg-pink-500/20 text-pink-400 p-3 rounded-full hover:bg-pink-500/30 transition hover:-translate-y-1 hover:shadow-lg"
+              class="bg-pink-500/20 text-pink-400 size-12 flex justify-center items-center rounded-full hover:bg-pink-500/30 transition hover:-translate-y-1 hover:shadow-lg"
             >
-              <i class="fab fa-skype"></i>
+              <i class="fa-brands fa-skype"></i>
             </a>
             <a
               href="#"
-              class="bg-slate-700/50 text-slate-300 p-3 rounded-full hover:bg-slate-600/50 transition hover:-translate-y-1 hover:shadow-lg"
+              class="bg-slate-700/50 text-slate-300 size-12 flex justify-center items-center rounded-full hover:bg-slate-600/50 transition hover:-translate-y-1 hover:shadow-lg"
             >
               <i class="fas fa-file-pdf"></i>
             </a>
@@ -1766,26 +2354,54 @@
         style="animation-delay: 1s"
       ></div>
     </footer>
-
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
+      // Initialize AOS animation
+      AOS.init({
+        duration: 800,
+        once: true,
+        easing: "ease-in-out",
+      });
+
+      // Initialize testimonial slider
+      $(document).ready(function () {
+        $(".testimonial-slider").slick({
+          dots: true,
+          infinite: true,
+          speed: 500,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 5000,
+          arrows: true,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                arrows: false,
+              },
+            },
+          ],
+        });
+      });
+
       // Full page menu functionality
       document.addEventListener("DOMContentLoaded", function () {
         const menuBtn = document.getElementById("menu-btn");
         const closeMenu = document.getElementById("close-menu");
         const fullpageMenu = document.getElementById("fullpage-menu");
-
         menuBtn.addEventListener("click", function () {
           fullpageMenu.classList.add("active");
           document.body.style.overflow = "hidden";
           menuBtn.classList.add("active");
         });
-
         closeMenu.addEventListener("click", function () {
           fullpageMenu.classList.remove("active");
           document.body.style.overflow = "auto";
           menuBtn.classList.remove("active");
         });
-
         // Close menu when clicking on a link
         document.querySelectorAll(".menu-links a").forEach((link) => {
           link.addEventListener("click", function () {
@@ -1794,21 +2410,17 @@
             menuBtn.classList.remove("active");
           });
         });
-
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
           anchor.addEventListener("click", function (e) {
             e.preventDefault();
-
             document.querySelector(this.getAttribute("href")).scrollIntoView({
               behavior: "smooth",
             });
           });
         });
-
         // Animation on scroll
         const fadeElements = document.querySelectorAll(".fade-in");
-
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
@@ -1821,11 +2433,9 @@
             threshold: 0.1,
           }
         );
-
         fadeElements.forEach((element) => {
           observer.observe(element);
         });
-
         // Navbar background change on scroll
         window.addEventListener("scroll", function () {
           const nav = document.querySelector("nav");
@@ -1835,6 +2445,109 @@
             nav.classList.remove("shadow-lg", "bg-slate-900/95");
           }
         });
+        // Scroll progress indicator
+        window.addEventListener("scroll", function () {
+          const scrollProgress = document.getElementById("scroll-progress");
+          const scrollTop = document.documentElement.scrollTop;
+          const scrollHeight = document.documentElement.scrollHeight;
+          const clientHeight = document.documentElement.clientHeight;
+          const scrollPercent =
+            (scrollTop / (scrollHeight - clientHeight)) * 100;
+          scrollProgress.style.width = scrollPercent + "%";
+        });
+        // Floating action button
+        const fab = document.getElementById("fab");
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 300) {
+            fab.style.display = "flex";
+          } else {
+            fab.style.display = "none";
+          }
+        });
+        fab.addEventListener("click", function () {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+        // Read more functionality
+        const readMoreButtons = document.querySelectorAll(".read-more-btn");
+        readMoreButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const textId = this.id.replace("read-more", "text");
+            const textElement = document.getElementById(textId);
+            textElement.classList.toggle("expanded");
+            this.classList.toggle("expanded");
+            if (this.classList.contains("expanded")) {
+              this.innerHTML = 'Read less <i class="fas fa-chevron-up"></i>';
+            } else {
+              this.innerHTML = 'Read more <i class="fas fa-chevron-down"></i>';
+            }
+          });
+        });
+        // Add slide-in animations for sections
+        const sections = document.querySelectorAll("section");
+        const sectionObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const children = entry.target.children;
+                for (let i = 0; i < children.length; i++) {
+                  if (children[i].classList.contains("fade-in")) {
+                    children[i].style.animationDelay = `${i * 0.1}s`;
+                  }
+                }
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+        sections.forEach((section) => {
+          sectionObserver.observe(section);
+        });
+        // Add hover effects to all glass cards
+        const glassCards = document.querySelectorAll(".glass-card");
+        glassCards.forEach((card) => {
+          card.addEventListener("mouseenter", function () {
+            this.style.transform = "translateY(-5px)";
+            this.style.boxShadow = "0 12px 24px rgba(59, 130, 246, 0.3)";
+          });
+          card.addEventListener("mouseleave", function () {
+            this.style.transform = "";
+            this.style.boxShadow = "";
+          });
+        });
+        // Typed.js initialization
+        const typed = new Typed("#typed-text", {
+          strings: [
+            "Research & Data Science Specialist",
+            "MEAL Expert",
+            "Public Health Researcher",
+            "Statistical Analyst",
+          ],
+          typeSpeed: 50,
+          backSpeed: 30,
+          loop: true,
+          showCursor: true,
+          cursorChar: "|",
+          autoInsertCss: true,
+        });
+        // Download CV button
+        document
+          .getElementById("download-cv")
+          .addEventListener("click", function (e) {
+            e.preventDefault();
+            // Create a temporary anchor element
+            const link = document.createElement("a");
+            link.href = "./assets/documents/Uzzal_Chowdhury.pdf"; // Path to your PDF file
+            link.download = "Uzzal-Chowdhury.pdf"; // Name for the downloaded file
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            // Optional: Track the download (if you have analytics)
+            // console.log('CV downloaded');
+          });
       });
     </script>
   </body>
